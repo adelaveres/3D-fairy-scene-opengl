@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>sasha</author>
+      <authoring_tool>3dsMax 11 - Feeling ColladaMax v3.05B.</authoring_tool>
+      <comments>ColladaMax Export Options: ExportNormals=1;ExportEPolyAsTriangles=0;ExportXRefs=0;ExportSelected=1;ExportTangents=0;ExportAnimations=0;SampleAnim=1;ExportAnimClip=0;BakeMatrices=0;ExportRelativePaths=1;AnimStart=0;AnimEnd=1;</comments>
+      <source_data>file:///D:/3ds%20Max%209/scenes/MY_MARCKET/3DOCEAN/models/forest/models/mushrooms/mystical_truffles/mystical_truffles.max</source_data>
+    </contributor>
+    <created>2010-08-02T08:52:45Z</created>
+    <modified>2010-08-02T08:52:46Z</modified>
+    <unit meter="1" name="meter"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="mystical_truffel_color.tif" name="mystical_truffel_color_tif">
+      <init_from>./mystical_truffel_color.tif</init_from>
+    </image>
+    <image id="mystical_truffel_specular.tif" name="mystical_truffel_specular_tif">
+      <init_from>./mystical_truffel_specular.tif</init_from>
+    </image>
+    <image id="mystical_truffel_bump.tif" name="mystical_truffel_bump_tif">
+      <init_from>./mystical_truffel_bump.tif</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="Mystical__tuffles" name="Mystical__tuffles">
+      <instance_effect url="#Mystical__tuffles-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="Mystical__tuffles-fx" name="Mystical__tuffles">
+      <profile_COMMON>
+        <newparam sid="mystical_truffel_color_tif-surface">
+          <surface type="2D">
+            <init_from>mystical_truffel_color.tif</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="mystical_truffel_color_tif-sampler">
+          <sampler2D>
+            <source>mystical_truffel_color_tif-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="mystical_truffel_specular_tif-surface">
+          <surface type="2D">
+            <init_from>mystical_truffel_specular.tif</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="mystical_truffel_specular_tif-sampler">
+          <sampler2D>
+            <source>mystical_truffel_specular_tif-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="mystical_truffel_bump_tif-surface">
+          <surface type="2D">
+            <init_from>mystical_truffel_bump.tif</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="mystical_truffel_bump_tif-sampler">
+          <sampler2D>
+            <source>mystical_truffel_bump_tif-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <ambient>
+              <color>0.588235 0.588235 0.588235 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="mystical_truffel_color_tif-sampler" texcoord="CHANNEL1">
+                <extra>
+                  <technique profile="MAYA">
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                  </technique>
+                  <technique profile="MAX3D">
+                    <amount>1</amount>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>0.261865</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>1</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA">
+              <spec_level>
+                <texture texture="mystical_truffel_specular_tif-sampler" texcoord="CHANNEL1">
+                  <extra>
+                    <technique profile="MAYA">
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <rotateUV>0</rotateUV>
+                    </technique>
+                    <technique profile="MAX3D">
+                      <amount>1</amount>
+                    </technique>
+                  </extra>
+                </texture>
+              </spec_level>
+              <bump>
+                <texture texture="mystical_truffel_bump_tif-sampler" texcoord="CHANNEL1">
+                  <extra>
+                    <technique profile="MAYA">
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <rotateUV>0</rotateUV>
+                    </technique>
+                    <technique profile="MAX3D">
+                      <amount>1</amount>
+                    </technique>
+                  </extra>
+                </texture>
+              </bump>
+              <emission_level>
+                <float>0</float>
+              </emission_level>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>0</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="mystical_truffles_low-mesh" name="mystical_truffles_low">
+      <mesh>
+        <source id="mystical_truffles_low-mesh-positions">
+          <float_array id="mystical_truffles_low-mesh-positions-array" count="126">0 0 0.422171 0.384831 0 0.173091 0.118919 0.365996 0.173091 -0.311335 0.226198 0.173091 -0.311335 -0.226198 0.173091 0.118919 -0.365996 0.173091 0.234329 0.17025 -0.166808 -0.089505 0.27547 -0.166808 -0.289647 0 -0.166808 -0.089505 -0.27547 -0.166808 0.234329 -0.17025 -0.166808 0 0 -0.399503 0.226198 0 0.333382 0.069899 0.215127 0.333382 -0.182998 0.132956 0.333382 -0.182998 -0.132956 0.333382 0.069899 -0.215127 0.333382 0.296097 0.215127 0.204287 -0.113099 0.348083 0.204287 -0.365996 0 0.204287 -0.113099 -0.348083 0.204287 0.296097 -0.215127 0.204287 0.380062 0.12349 -0.002415 0 0.39962 -0.002415 -0.380062 0.12349 -0.002415 -0.234891 -0.3233 -0.002415 0.234891 -0.3233 -0.002415 0.380062 -0.123489 -0.002415 0.234891 0.3233 -0.002415 -0.234891 0.3233 -0.002415 -0.380062 -0.12349 -0.002415 0 -0.39962 -0.002415 0.084751 0.260838 -0.1888 -0.221882 0.161207 -0.1888 -0.221882 -0.161207 -0.1888 0.084751 -0.260838 -0.1888 0.274262 0 -0.1888 0.093954 0.068262 -0.282123 -0.035887 0.11045 -0.282123 -0.116134 0 -0.282123 -0.035887 -0.11045 -0.282123 0.093954 -0.068262 -0.282123</float_array>
+          <technique_common>
+            <accessor source="#mystical_truffles_low-mesh-positions-array" count="42" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="mystical_truffles_low-mesh-normals">
+          <float_array id="mystical_truffles_low-mesh-normals-array" count="126">0.325904 0.945402 0 1 0 0 1 0 0 0.875624 0.473435 0.095491 1 0 0 1 0 0 0.605269 0.550731 0.574764 1 0 0 1 0 0 1 0 0 0.883617 0.440635 0.158376 1 0 0 0.040024 0.886136 0.461709 1 0 0 0.608876 0.600247 0.518643 0.480375 0.864467 0.148123 1 0 0 0.765627 0.639156 0.072916 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0.070582 0.694949 0.71556 0.050715 0.157965 0.986132 1 0 0 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0.672552 0.073231 0.736419 0.313596 0.099812 0.944303 1 0 0 0.329336 0.32936 0.884905 0.707119 0.707096 0 1 0 0 1 0 0 1 0 0 0.738028 0.439944 0.511626 0.072482 0.664706 0.743585</float_array>
+          <technique_common>
+            <accessor source="#mystical_truffles_low-mesh-normals-array" count="42" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="mystical_truffles_low-mesh-map-channel1">
+          <float_array id="mystical_truffles_low-mesh-map-channel1-array" count="156">0.383993 0.605688 0.999017 0.383993 0.822147 1.02466 0.17847 0.67225 1.02812 0.257517 0.431397 1.03371 0.504188 0.434538 1.03371 0.589517 0.67225 1.02812 0.152433 0.92262 0.827061 0.012969 0.483379 0.832888 0.383993 0.216152 0.83647 0.755017 0.483379 0.832888 0.615554 0.92262 0.827061 0.809187 0.197148 0 0.383993 0.716649 1.00896 0.278568 0.639896 1.01103 0.318986 0.51617 1.01437 0.449 0.51617 1.01437 0.489419 0.639896 1.01103 0.266576 0.76712 1.02429 0.194766 0.54403 1.02962 0.383993 0.40704 1.0329 0.57322 0.54403 1.02962 0.501411 0.76712 1.02429 0.2912 0.890608 0.94336 0.08534 0.605028 0.948736 0.292201 0.322531 0.954082 0.631084 0.420654 0.952043 0.626423 0.781157 0.945417 0.476787 0.890608 0.94336 0.141564 0.781157 0.945417 0.143184 0.430076 0.952043 0.488348 0.314679 0.954082 0.692068 0.597176 0.948736 0.016443 0.72221 0.817828 0.145974 0.27605 0.823409 0.622012 0.27605 0.823409 0.74958 0.730067 0.817828 0.382029 0.991896 0.81436 0.907673 0.253383 0 0.786138 0.308191 0 0.97783 0.293442 0 0.884781 0.364774 0 0.769719 0.387293 0 0.893104 0.12086 0 0.952882 0.066515 0 0.991969 0.177053 0 0.762565 0.093764 0 0.729353 0.020118 0 0.846559 0.017102 0 0.696457 0.209541 0 0.616152 0.218369 0 0.649503 0.105968 0 0.673125 0.320841 0</float_array>
+          <technique_common>
+            <accessor source="#mystical_truffles_low-mesh-map-channel1-array" count="52" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="mystical_truffles_low-mesh-vertices">
+          <input semantic="POSITION" source="#mystical_truffles_low-mesh-positions"/>
+        </vertices>
+        <triangles material="Mystical__tuffles" count="80">
+          <input semantic="VERTEX" source="#mystical_truffles_low-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#mystical_truffles_low-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#mystical_truffles_low-mesh-map-channel1" offset="2" set="1"/>
+          <p>0 0 0 12 1 12 13 2 13 12 1 12 1 3 1 17 4 17 12 1 12 17 4 17 13 2 13 13 2 13 17 4 17 2 5 2 0 0 0 13 2 13 14 6 14 13 2 13 2 5 2 18 7 18 13 2 13 18 7 18 14 6 14 14 6 14 18 7 18 3 8 3 0 0 0 14 6 14 15 9 15 14 6 14 3 8 3 19 10 19 14 6 14 19 10 19 15 9 15 15 9 15 19 10 19 4 11 4 0 0 0 15 9 15 16 12 16 15 9 15 4 11 4 20 13 20 15 9 15 20 13 20 16 12 16 16 12 16 20 13 20 5 14 5 0 0 0 16 12 16 12 1 12 16 12 16 5 14 5 21 15 21 16 12 16 21 15 21 12 1 12 12 1 12 21 15 21 1 3 1 1 3 1 27 16 27 22 17 22 27 16 27 10 18 10 36 19 36 27 16 27 36 19 36 22 17 22 22 17 22 36 19 36 6 20 6 2 5 2 28 21 28 23 22 23 28 21 28 6 20 6 32 23 32 28 21 28 32 23 32 23 22 23 23 22 23 32 23 32 7 24 7 3 8 3 29 25 29 24 26 24 29 25 29 7 24 7 33 27 33 29 25 29 33 27 33 24 26 24 24 26 24 33 27 33 8 28 8 4 11 4 30 29 30 25 30 25 30 29 30 8 28 8 34 31 34 30 29 30 34 31 34 25 30 25 25 30 25 34 31 34 9 32 9 5 14 5 31 33 31 26 34 26 31 33 31 9 32 9 35 35 35 31 33 31 35 35 35 26 34 26 26 34 26 35 35 35 10 18 10 6 20 6 28 21 28 22 17 22 28 21 28 2 5 2 17 4 17 28 21 28 17 4 17 22 17 22 22 17 22 17 4 17 1 3 1 7 24 7 29 25 29 23 22 23 29 25 29 3 8 3 18 7 18 29 25 29 18 7 18 23 22 23 23 22 23 18 7 18 2 5 2 8 28 8 30 29 30 24 26 24 30 29 30 4 11 4 19 10 19 30 29 30 19 10 19 24 26 24 24 26 24 19 10 19 3 8 3 9 32 9 31 33 31 25 30 25 31 33 31 5 14 5 20 13 20 31 33 31 20 13 20 25 30 25 25 30 25 20 13 20 4 11 4 10 18 10 27 16 27 26 34 26 27 16 27 1 3 1 21 15 21 27 16 27 21 15 21 26 34 26 26 34 26 21 15 21 5 14 5 11 36 11 38 37 37 37 38 38 38 37 37 7 24 39 32 23 40 38 37 37 32 23 40 37 38 38 37 38 38 32 23 40 6 20 41 11 36 11 39 39 42 38 37 37 39 39 42 8 28 43 33 27 44 39 39 42 33 27 44 38 37 37 38 37 37 33 27 44 7 24 39 11 36 11 40 40 45 39 39 42 40 40 45 9 32 46 34 31 47 40 40 45 34 31 47 39 39 42 39 39 42 34 31 47 8 28 43 11 36 11 41 41 48 40 40 45 41 41 48 10 18 49 35 35 50 41 41 48 35 35 50 40 40 45 40 40 45 35 35 50 9 32 46 11 36 11 37 38 38 41 41 48 37 38 38 6 20 41 36 19 51 37 38 38 36 19 51 41 41 48 41 41 48 36 19 51 10 18 49</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="mystical_truffles.max" name="mystical_truffles_max">
+      <node id="mystical_truffles_low-node" name="mystical_truffles_low" type="NODE">
+        <translate>0 0 0</translate>
+        <node id="mystical_truffles_low-node_PIVOT" name="mystical_truffles_low_PIVOT" type="NODE">
+          <matrix>1 0 0 -0.002384 0 1 0 0 0 0 1 0.25295 0 0 0 1</matrix>
+          <instance_geometry url="#mystical_truffles_low-mesh">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="Mystical__tuffles" target="#Mystical__tuffles">
+                  <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="1"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0</start_time>
+          <end_time>1</end_time>
+        </technique>
+      </extra>
+      <extra>
+        <technique profile="MAX3D">
+          <frame_rate>30</frame_rate>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#mystical_truffles.max"/>
+  </scene>
+</COLLADA>

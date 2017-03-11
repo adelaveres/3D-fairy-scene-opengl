@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>sasha</author>
+      <authoring_tool>3dsMax 11 - Feeling ColladaMax v3.05B.</authoring_tool>
+      <comments>ColladaMax Export Options: ExportNormals=1;ExportEPolyAsTriangles=0;ExportXRefs=0;ExportSelected=1;ExportTangents=0;ExportAnimations=0;SampleAnim=1;ExportAnimClip=0;BakeMatrices=0;ExportRelativePaths=1;AnimStart=0;AnimEnd=1;</comments>
+      <source_data>file:///D:/3ds%20Max%209/scenes/MY_MARCKET/3DOCEAN/models/forest/models/mushrooms/boletus/boletus.max</source_data>
+    </contributor>
+    <created>2010-08-02T08:43:28Z</created>
+    <modified>2010-08-02T08:43:29Z</modified>
+    <unit meter="1" name="meter"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="boletus_color.tif" name="boletus_color_tif">
+      <init_from>./boletus_color.tif</init_from>
+    </image>
+    <image id="boletus_specular.tif" name="boletus_specular_tif">
+      <init_from>./boletus_specular.tif</init_from>
+    </image>
+    <image id="boletus_bump.tif" name="boletus_bump_tif">
+      <init_from>./boletus_bump.tif</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="boletus" name="boletus">
+      <instance_effect url="#boletus-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="boletus-fx" name="boletus">
+      <profile_COMMON>
+        <newparam sid="boletus_color_tif-surface">
+          <surface type="2D">
+            <init_from>boletus_color.tif</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="boletus_color_tif-sampler">
+          <sampler2D>
+            <source>boletus_color_tif-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="boletus_specular_tif-surface">
+          <surface type="2D">
+            <init_from>boletus_specular.tif</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="boletus_specular_tif-sampler">
+          <sampler2D>
+            <source>boletus_specular_tif-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="boletus_bump_tif-surface">
+          <surface type="2D">
+            <init_from>boletus_bump.tif</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="boletus_bump_tif-sampler">
+          <sampler2D>
+            <source>boletus_bump_tif-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <ambient>
+              <color>0.588235 0.588235 0.588235 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="boletus_color_tif-sampler" texcoord="CHANNEL1">
+                <extra>
+                  <technique profile="MAYA">
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                  </technique>
+                  <technique profile="MAX3D">
+                    <amount>1</amount>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>0.415939</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>1</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA">
+              <spec_level>
+                <texture texture="boletus_specular_tif-sampler" texcoord="CHANNEL1">
+                  <extra>
+                    <technique profile="MAYA">
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <rotateUV>0</rotateUV>
+                    </technique>
+                    <technique profile="MAX3D">
+                      <amount>1</amount>
+                    </technique>
+                  </extra>
+                </texture>
+              </spec_level>
+              <bump>
+                <texture texture="boletus_bump_tif-sampler" texcoord="CHANNEL1">
+                  <extra>
+                    <technique profile="MAYA">
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <rotateUV>0</rotateUV>
+                    </technique>
+                    <technique profile="MAX3D">
+                      <amount>0.2</amount>
+                    </technique>
+                  </extra>
+                </texture>
+              </bump>
+              <emission_level>
+                <float>0</float>
+              </emission_level>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>0</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="boletus_low-mesh" name="boletus_low">
+      <mesh>
+        <source id="boletus_low-mesh-positions">
+          <float_array id="boletus_low-mesh-positions-array" count="195">0.146708 -0.002445 -0.0508 0.103558 0.095899 -0.0632 -0.000617 0.1383 -0.065246 -0.104792 0.095108 -0.065246 -0.147943 -0.004751 -0.065246 -0.104792 -0.118127 -0.065246 -0.000617 -0.15099 -0.065246 0.103558 -0.105923 -0.0632 0.182133 -0.006815 0.558382 0.132477 0.110032 0.556449 0.012597 0.160514 0.554532 -0.107283 0.110957 0.575906 -0.156939 -0.00693 0.594739 -0.107283 -0.13042 0.60016 0.012597 -0.17574 0.598898 0.132477 -0.126228 0.579237 0.410615 -0.00722 0.55728 0.300188 0.29743 0.591647 0.000169 0.43251 0.625767 -0.299848 0.299151 0.621124 -0.42412 0.000313 0.656756 -0.299848 -0.301185 0.647968 0.000169 -0.425468 0.645537 0.300188 -0.303242 0.605871 0.000169 0.016733 0.897084 0.198084 0.180218 0.247923 0.280389 -0.007662 0.284806 -0.000617 0.260215 0.215181 -0.199319 0.177698 0.225128 -0.281623 -0.028634 0.24125 -0.199318 -0.23061 0.259694 -0.000617 -0.298703 0.263238 0.198084 -0.1976 0.277515 0.215383 -0.003164 0.468698 0.15429 0.130338 0.424455 0.006799 0.189225 0.401209 -0.140691 0.130979 0.423281 -0.201784 -0.006854 0.455146 -0.140691 -0.164068 0.488762 0.006799 -0.211081 0.49068 0.15429 -0.148254 0.48257 0.263567 0.008283 0.793608 0.183807 0.190612 0.812189 0.003993 0.296204 0.807749 -0.175821 0.191801 0.829658 -0.250302 0.012902 0.869919 -0.175821 -0.167886 0.841001 0.003993 -0.242534 0.84109 0.183807 -0.168997 0.82468 0.393009 -0.00318 0.637407 0.281009 0.281139 0.685401 0.001992 0.42271 0.724173 -0.277024 0.282992 0.712583 -0.392596 0.00516 0.740946 -0.277024 -0.275466 0.72985 0.001992 -0.391701 0.720956 0.281009 -0.277722 0.693619 0.189383 0.175621 0.1052 -0.000617 0.254219 0.092188 -0.190617 0.175076 0.091288 -0.269318 -0.015742 0.084624 -0.190617 -0.215269 0.079074 -0.000617 -0.278061 0.075936 0.189383 -0.189062 0.092503 0.268083 -0.005786 0.120685</float_array>
+          <technique_common>
+            <accessor source="#boletus_low-mesh-positions-array" count="65" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="boletus_low-mesh-normals">
+          <float_array id="boletus_low-mesh-normals-array" count="267">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.169912 0.016913 0.985314 0.205057 0.020412 0.978537 0.003965 0 0.999992 0.003965 0 0.999992 0.003965 0 0.999992 0.003965 0 0.999992 0.003965 0 0.999992 0.003965 0 0.999992 0.003965 0 0.999992 0.003965 0 0.999992 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.010404 0.310764 0.95043 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</float_array>
+          <technique_common>
+            <accessor source="#boletus_low-mesh-normals-array" count="89" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="boletus_low-mesh-map-channel1">
+          <float_array id="boletus_low-mesh-map-channel1-array" count="291">0.980521 0.291861 0.263856 0.987737 0.373505 0.277126 0.889742 0.369296 0.485639 0.880731 0.284662 0.47871 0.988927 0.456132 0.281872 0.897314 0.456132 0.489271 0.988927 0.539146 0.276076 0.897837 0.543126 0.48494 0.313664 0.03123 0 0.504751 0.095149 0 0.473643 0.135679 0 0.317067 0.084046 0 0.604897 0.281697 0 0.555498 0.286835 0 0.528929 0.480166 0 0.484523 0.440597 0 0.988927 0.622158 0.263419 0.335301 0.569384 0 0.713456 0.102326 0 0.770478 0.052908 0 0.843084 0.052908 0 0.893108 0.116123 0 0.885723 0.188023 0 0.828326 0.236214 0 0.753813 0.230208 0 0.706795 0.176745 0 0.334578 0.509528 0 0.137089 0.492082 0 0.184678 0.445694 0 0.058783 0.300423 0 0.116226 0.300677 0 0.133964 0.114548 0 0.176861 0.152994 0 0.408841 0.212597 0 0.331441 0.301625 0 0.324788 0.178297 0 0.45975 0.292593 0 0.41469 0.376569 0 0.333862 0.414445 0 0.250714 0.38214 0 0.213952 0.30154 0 0.244887 0.21821 0 0.901715 0.631799 0.478146 0.988927 0.719222 0.256241 0.904944 0.72392 0.487133 0.988927 0.810421 0.235716 0.906771 0.810421 0.463067 0.987737 0.908997 0.24168 0.89713 0.905003 0.45454 0.785226 0.283658 0.500429 0.295959 0.689797 0 0.231504 0.669581 0 0.213459 0.538791 0 0.37494 0.597615 0 0.169704 0.700555 0 0.055253 0.614857 0 0.148421 0.766872 0 0.005771 0.781715 0 0.179038 0.828232 0 0.083936 0.936125 0 0.246183 0.850872 0 0.248918 0.989296 0 0.305892 0.817995 0 0.40275 0.910782 0 0.327193 0.751762 0 0.456741 0.745983 0 0.806689 0.368087 0.502351 0.703963 0.365899 0.384182 0.678217 0.287413 0.385408 0.825742 0.456132 0.499999 0.71749 0.452144 0.373219 0.819954 0.544895 0.499159 0.704646 0.540453 0.366549 0.810572 0.637065 0.500283 0.686103 0.626302 0.358626 0.79984 0.725642 0.517699 0.666542 0.72404 0.359527 0.797777 0.810421 0.5 0.665426 0.814755 0.343483 0.789469 0.904763 0.476267 0.670145 0.908945 0.359514 0.627154 0.36623 0.331029 0.626029 0.286688 0.32593 0.628269 0.447903 0.322475 0.615831 0.533231 0.300479 0.604872 0.624363 0.279018 0.601718 0.724495 0.274932 0.602452 0.819869 0.280983 0.613893 0.910906 0.304501 0.980521 1.00044 0.263856 0.880731 0.99324 0.47871 0.785227 0.992236 0.500429 0.678217 0.995992 0.385408 0.678217 0.995992 0.385408 0.626029 0.995266 0.32593 0.880731 0.99324 0.47871 0.785227 0.992236 0.500429</float_array>
+          <technique_common>
+            <accessor source="#boletus_low-mesh-map-channel1-array" count="97" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="boletus_low-mesh-vertices">
+          <input semantic="POSITION" source="#boletus_low-mesh-positions"/>
+        </vertices>
+        <polylist material="boletus" count="65">
+          <input semantic="VERTEX" source="#boletus_low-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#boletus_low-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#boletus_low-mesh-map-channel1" offset="2" set="1"/>
+          <vcount>4 4 4 4 4 4 4 4 8 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4</vcount>
+          <p>0 0 0 1 1 1 57 2 2 64 3 3 1 1 1 2 4 4 58 5 5 57 2 2 2 4 4 3 6 6 59 7 7 58 5 5 3 6 6 4 8 16 60 9 42 59 7 7 4 8 16 5 10 43 61 11 44 60 9 42 5 10 43 6 12 45 62 13 46 61 11 44 6 12 45 7 14 47 63 15 48 62 13 46 7 14 47 0 0 89 64 3 90 63 15 48 7 16 18 6 17 19 5 18 20 4 19 21 3 20 22 2 21 23 1 22 24 0 23 25 26 24 49 25 25 66 34 26 67 33 27 68 25 25 66 27 28 69 35 29 70 34 26 67 27 28 69 28 30 71 36 31 72 35 29 70 28 30 71 29 32 73 37 33 74 36 31 72 29 32 73 30 34 75 38 35 76 37 33 74 30 34 75 31 36 77 39 37 78 38 35 76 31 36 77 32 38 79 40 39 80 39 37 78 32 38 79 26 24 91 33 27 92 40 39 80 8 40 50 9 41 51 17 42 52 16 43 53 9 41 51 10 44 54 18 45 55 17 42 52 10 44 54 11 46 56 19 47 57 18 45 55 11 46 56 12 48 58 20 49 59 19 47 57 12 48 58 13 50 60 21 51 61 20 49 59 13 50 60 14 52 62 22 53 63 21 51 61 14 52 62 15 54 64 23 55 65 22 53 63 15 54 64 8 40 50 16 43 53 23 55 65 16 56 8 17 57 9 50 58 10 49 59 11 17 57 9 18 60 12 51 61 13 50 58 10 18 60 12 19 62 14 52 63 15 51 61 13 19 62 14 20 64 17 53 65 26 52 63 15 20 64 17 21 66 27 54 67 28 53 65 26 21 66 27 22 68 29 55 69 30 54 67 28 22 68 29 23 70 31 56 71 32 55 69 30 23 70 31 16 56 8 49 59 11 56 71 32 34 26 67 9 72 81 8 73 82 33 27 68 35 29 70 10 74 83 9 72 81 34 26 67 36 31 72 11 75 84 10 74 83 35 29 70 37 33 74 12 76 85 11 75 84 36 31 72 38 35 76 13 77 86 12 76 85 37 33 74 39 37 78 14 78 87 13 77 86 38 35 76 40 39 80 15 79 88 14 78 87 39 37 78 33 27 93 8 73 94 15 79 88 40 39 80 42 80 33 24 81 34 41 82 35 43 83 36 24 81 34 42 80 33 44 84 37 24 81 34 43 83 36 45 85 38 24 81 34 44 84 37 46 86 39 24 81 34 45 85 38 47 87 40 24 81 34 46 86 39 48 88 41 24 81 34 47 87 40 41 82 35 24 81 34 48 88 41 50 58 10 42 80 33 41 82 35 49 59 11 51 61 13 43 83 36 42 80 33 50 58 10 52 63 15 44 84 37 43 83 36 51 61 13 53 65 26 45 85 38 44 84 37 52 63 15 54 67 28 46 86 39 45 85 38 53 65 26 55 69 30 47 87 40 46 86 39 54 67 28 56 71 32 48 88 41 47 87 40 55 69 30 49 59 11 41 82 35 48 88 41 56 71 32 57 2 2 25 25 66 26 24 49 64 3 3 58 5 5 27 28 69 25 25 66 57 2 2 59 7 7 28 30 71 27 28 69 58 5 5 60 9 42 29 32 73 28 30 71 59 7 7 61 11 44 30 34 75 29 32 73 60 9 42 62 13 46 31 36 77 30 34 75 61 11 44 63 15 48 32 38 79 31 36 77 62 13 46 64 3 95 26 24 96 32 38 79 63 15 48</p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="boletus.max" name="boletus_max">
+      <node id="boletus_low-node" name="boletus_low" type="NODE">
+        <translate>-0.011153 0.021731 0</translate>
+        <instance_geometry url="#boletus_low-mesh">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="boletus" target="#boletus">
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="1"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0</start_time>
+          <end_time>1</end_time>
+        </technique>
+      </extra>
+      <extra>
+        <technique profile="MAX3D">
+          <frame_rate>30</frame_rate>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#boletus.max"/>
+  </scene>
+</COLLADA>

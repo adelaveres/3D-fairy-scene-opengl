@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>sasha</author>
+      <authoring_tool>3dsMax 11 - Feeling ColladaMax v3.05B.</authoring_tool>
+      <comments>ColladaMax Export Options: ExportNormals=1;ExportEPolyAsTriangles=0;ExportXRefs=0;ExportSelected=1;ExportTangents=0;ExportAnimations=0;SampleAnim=1;ExportAnimClip=0;BakeMatrices=0;ExportRelativePaths=1;AnimStart=0;AnimEnd=1;</comments>
+      <source_data>file:///D:/3ds%20Max%209/scenes/MY_MARCKET/3DOCEAN/models/forest/models/mushrooms/morel/morel.max</source_data>
+    </contributor>
+    <created>2010-08-02T08:50:57Z</created>
+    <modified>2010-08-02T08:50:57Z</modified>
+    <unit meter="1" name="meter"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="morel_color.tif" name="morel_color_tif">
+      <init_from>./morel_color.tif</init_from>
+    </image>
+    <image id="morel_specular.tif" name="morel_specular_tif">
+      <init_from>./morel_specular.tif</init_from>
+    </image>
+    <image id="morel_bump.tif" name="morel_bump_tif">
+      <init_from>./morel_bump.tif</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="morel" name="morel">
+      <instance_effect url="#morel-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="morel-fx" name="morel">
+      <profile_COMMON>
+        <newparam sid="morel_color_tif-surface">
+          <surface type="2D">
+            <init_from>morel_color.tif</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="morel_color_tif-sampler">
+          <sampler2D>
+            <source>morel_color_tif-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="morel_specular_tif-surface">
+          <surface type="2D">
+            <init_from>morel_specular.tif</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="morel_specular_tif-sampler">
+          <sampler2D>
+            <source>morel_specular_tif-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="morel_bump_tif-surface">
+          <surface type="2D">
+            <init_from>morel_bump.tif</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="morel_bump_tif-sampler">
+          <sampler2D>
+            <source>morel_bump_tif-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <ambient>
+              <color>0.588235 0.588235 0.588235 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="morel_color_tif-sampler" texcoord="CHANNEL1">
+                <extra>
+                  <technique profile="MAYA">
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                  </technique>
+                  <technique profile="MAX3D">
+                    <amount>1</amount>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>0.379005</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>1</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA">
+              <spec_level>
+                <texture texture="morel_specular_tif-sampler" texcoord="CHANNEL1">
+                  <extra>
+                    <technique profile="MAYA">
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <rotateUV>0</rotateUV>
+                    </technique>
+                    <technique profile="MAX3D">
+                      <amount>1</amount>
+                    </technique>
+                  </extra>
+                </texture>
+              </spec_level>
+              <bump>
+                <texture texture="morel_bump_tif-sampler" texcoord="CHANNEL1">
+                  <extra>
+                    <technique profile="MAYA">
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <rotateUV>0</rotateUV>
+                    </technique>
+                    <technique profile="MAX3D">
+                      <amount>1</amount>
+                    </technique>
+                  </extra>
+                </texture>
+              </bump>
+              <emission_level>
+                <float>0</float>
+              </emission_level>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>0</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="morel_low-mesh" name="morel_low">
+      <mesh>
+        <source id="morel_low-mesh-positions">
+          <float_array id="morel_low-mesh-positions-array" count="219">0.078388 0.00897 -0.076199 0.055757 0.063607 -0.076199 0.00112 0.086239 -0.076199 -0.053517 0.063607 -0.076199 -0.076148 0.00897 -0.076199 -0.053516 -0.045666 -0.076199 0.00112 -0.068298 -0.076199 0.055757 -0.045666 -0.076199 0.090397 -0.000534 0.268271 0.064248 0.062594 0.268271 0.00112 0.088742 0.268271 -0.062008 0.062594 0.268271 -0.088157 -0.000534 0.268271 -0.062008 -0.063663 0.268271 0.00112 -0.089812 0.268271 0.064248 -0.063663 0.268271 0.08253 -0.000957 0.388474 0.060718 0.05173 0.387789 0.008056 0.073553 0.386132 -0.044604 0.05173 0.384476 -0.066417 -0.000957 0.383791 -0.044604 -0.053644 0.384476 0.008056 -0.075467 0.386132 0.060718 -0.053644 0.387789 0.123596 -0.000452 0.374225 0.105341 0.088912 0.370921 0.014572 0.153564 0.365917 -0.084528 0.100782 0.362063 -0.122365 0.001229 0.361436 -0.076629 -0.091964 0.364147 0.017139 -0.12168 0.36894 0.098007 -0.080813 0.373149 -0.011391 0.00371 1.01414 0.099593 0.107444 0.134972 0.140383 0.00897 0.134972 0.00112 0.148233 0.134972 -0.097353 0.107444 0.134972 -0.138142 0.00897 0.134972 -0.097353 -0.089502 0.134972 0.00112 -0.130292 0.134972 0.099593 -0.089502 0.134972 0.123429 0.008157 0.773297 0.091493 0.10807 0.778207 -0.012221 0.167547 0.785935 -0.116074 0.10807 0.790885 -0.159063 0.004147 0.793511 -0.116074 -0.099775 0.790885 -0.01229 -0.142821 0.784546 0.091493 -0.099775 0.778207 0.188849 0.010308 0.591842 0.142222 0.155179 0.588331 -0.00684 0.24142 0.565267 -0.155299 0.155179 0.53822 -0.216917 0.004493 0.527842 -0.155299 -0.146193 0.53822 -0.006538 -0.208609 0.563275 0.142222 -0.146193 0.588331 0.192014 0.011061 0.421553 0.147846 0.147508 0.423802 0.005942 0.228547 0.420915 -0.135878 0.147529 0.41494 -0.194663 0.005585 0.413127 -0.135723 -0.136201 0.414556 0.006009 -0.194751 0.418681 0.147766 -0.136243 0.423575 0.095149 0.103 0.035794 0.00112 0.141949 0.035794 -0.092909 0.103 0.035794 -0.131858 0.00897 0.035794 -0.092909 -0.085059 0.035794 0.00112 -0.124007 0.035794 0.095149 -0.085059 0.035794 0.134098 0.00897 0.035794</float_array>
+          <technique_common>
+            <accessor source="#morel_low-mesh-positions-array" count="73" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="morel_low-mesh-normals">
+          <float_array id="morel_low-mesh-normals-array" count="267">0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0.000056 1 0 0.000000 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0.43231 0.901725 -0.006471 0.019229 0.999794 -0.000000 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.999999 0.001241 0 0.999999 0.001241 0 0 0 0 0.000954 0.000001 1 0 0 0 0.000954 0.000001 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.000000 0 1 -0.000000 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.124265 0.818367 0.561102 0 0.450267 0.892895 0.699619 0 0.714515 0 0 0</float_array>
+          <technique_common>
+            <accessor source="#morel_low-mesh-normals-array" count="89" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="morel_low-mesh-map-channel1">
+          <float_array id="morel_low-mesh-map-channel1-array" count="297">0.786899 0.005598 0.248295 0.303944 0.005598 0.223735 0.309146 0.10383 0.371712 0.788961 0.10383 0.402689 0.371631 0.005598 0.18321 0.378497 0.10383 0.322523 0.453785 0.005598 0.168547 0.456439 0.10383 0.314933 0.530688 0.005598 0.181671 0.52731 0.10383 0.335944 0.600839 0.005598 0.195165 0.594372 0.10383 0.342888 0.669977 0.005598 0.212807 0.664569 0.10383 0.35241 0.732453 0.005598 0.238647 0.730921 0.10383 0.385106 0.780284 0.258201 0.283504 0.298643 0.258201 0.24249 0.213092 0.398048 0.1965 0.860865 0.40019 0.234671 0.372156 0.258201 0.189427 0.287087 0.398494 0.13739 0.462598 0.258201 0.183895 0.400545 0.397294 0.11018 0.538942 0.258201 0.218339 0.520547 0.396798 0.138031 0.603944 0.258201 0.246084 0.622359 0.398939 0.175639 0.667217 0.258201 0.266586 0.725933 0.398494 0.209558 0.726428 0.258201 0.286045 0.799117 0.398048 0.235187 0.189134 0.459173 0.332279 0.89066 0.461566 0.333957 0.27153 0.455549 0.313163 0.396412 0.452758 0.255213 0.518286 0.452304 0.271273 0.628225 0.454268 0.289719 0.731314 0.457738 0.314308 0.817667 0.460786 0.343025 0.902032 0.535903 0.499612 0.170911 0.537531 0.4922 0.166703 0.656675 0.491937 0.901547 0.659218 0.491895 0.28661 0.535441 0.474656 0.295258 0.639974 0.500818 0.402735 0.531114 0.41603 0.408544 0.620387 0.462078 0.50921 0.529801 0.446333 0.50908 0.612872 0.500811 0.609421 0.530836 0.457527 0.604144 0.620387 0.506771 0.713851 0.533823 0.470996 0.705256 0.638531 0.500368 0.812586 0.537367 0.513919 0.806206 0.656675 0.518724 0.309484 0.158767 0.388454 0.789099 0.158767 0.420115 0.378916 0.158767 0.338309 0.456591 0.158767 0.331456 0.527114 0.158767 0.353365 0.593976 0.158767 0.359619 0.664217 0.158767 0.368209 0.730818 0.158767 0.401632 0.248735 0.816168 0.328337 0.599799 0.984872 0.028305 0.852654 0.813154 0.332264 0.344648 0.82091 0.336128 0.442958 0.823948 0.322429 0.52555 0.825559 0.359773 0.602816 0.823948 0.364773 0.686294 0.820058 0.354092 0.771476 0.816168 0.359298 0.182024 0.954893 0 0.118938 0.995084 0 0.04591 0.978894 0 0.005719 0.915807 0 0.021909 0.84278 0 0.084996 0.802589 0 0.158024 0.818779 0 0.198214 0.881866 0 0.841812 0.005598 0.223735 0.918329 0.399693 0.1965 0.836511 0.258201 0.24249 0.992011 0.656675 0.491937 0.931422 0.816168 0.328337 0.970032 0.459173 0.332279 0.98635 0.537531 0.4922 0.847014 0.10383 0.371712 0.847351 0.158767 0.388454 0.289608 0.389524 0.1965 0.778126 0.389858 0.234671 0.355486 0.388716 0.13739 0.455402 0.387908 0.11018 0.547606 0.387573 0.138031 0.616682 0.387908 0.175639 0.677052 0.388716 0.209558 0.730308 0.389524 0.235187 0.827476 0.389524 0.1965</float_array>
+          <technique_common>
+            <accessor source="#morel_low-mesh-map-channel1-array" count="99" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="morel_low-mesh-vertices">
+          <input semantic="POSITION" source="#morel_low-mesh-positions"/>
+        </vertices>
+        <polylist material="morel" count="73">
+          <input semantic="VERTEX" source="#morel_low-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#morel_low-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#morel_low-mesh-map-channel1" offset="2" set="1"/>
+          <vcount>4 4 4 4 4 4 4 4 8 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4</vcount>
+          <p>0 0 0 1 1 81 65 2 88 72 3 3 1 1 1 2 4 4 66 5 5 65 2 2 2 4 4 3 6 6 67 7 7 66 5 5 3 6 6 4 8 8 68 9 9 67 7 7 4 8 8 5 10 10 69 11 11 68 9 9 5 10 10 6 12 12 70 13 13 69 11 11 6 12 12 7 14 14 71 15 15 70 13 13 7 14 14 0 0 0 72 3 3 71 15 15 7 16 73 6 17 74 5 18 75 4 19 76 3 20 77 2 21 78 1 22 79 0 23 80 8 24 16 9 25 83 17 26 98 16 27 91 9 25 17 10 28 20 18 29 92 17 26 90 10 28 20 11 30 22 19 31 93 18 29 92 11 30 22 12 32 24 20 33 94 19 31 93 12 32 24 13 34 26 21 35 95 20 33 94 13 34 26 14 36 28 22 37 96 21 35 95 14 36 28 15 38 30 23 39 97 22 37 96 15 38 30 8 24 16 16 27 91 23 39 97 16 40 19 17 41 82 25 42 86 24 43 33 17 41 18 18 44 21 26 45 34 25 42 32 18 44 21 19 46 23 27 47 35 26 45 34 19 46 23 20 48 25 28 49 36 27 47 35 20 48 25 21 50 27 29 51 37 28 49 36 21 50 27 22 52 29 30 53 38 29 51 37 22 52 29 23 54 31 31 55 39 30 53 38 23 54 31 16 40 19 24 43 33 31 55 39 57 56 40 58 57 87 50 58 84 49 59 43 58 57 41 59 60 44 51 61 45 50 58 42 59 60 44 60 62 46 52 63 47 51 61 45 60 62 46 61 64 48 53 65 49 52 63 47 61 64 48 62 66 50 54 67 51 53 65 49 62 66 50 63 68 52 55 69 53 54 67 51 63 68 52 64 70 54 56 71 55 55 69 53 64 70 54 57 56 40 49 59 43 56 71 55 33 72 89 9 25 83 8 24 16 34 73 57 35 74 58 10 28 20 9 25 17 33 72 56 36 75 59 11 30 22 10 28 20 35 74 58 37 76 60 12 32 24 11 30 22 36 75 59 38 77 61 13 34 26 12 32 24 37 76 60 39 78 62 14 36 28 13 34 26 38 77 61 40 79 63 15 38 30 14 36 28 39 78 62 34 73 57 8 24 16 15 38 30 40 79 63 42 80 85 32 81 65 41 82 66 43 83 67 32 81 65 42 80 64 44 84 68 32 81 65 43 83 67 45 85 69 32 81 65 44 84 68 46 86 70 32 81 65 45 85 69 47 87 71 32 81 65 46 86 70 48 88 72 32 81 65 47 87 71 41 82 66 32 81 65 48 88 72 50 58 84 42 80 85 41 82 66 49 59 43 51 61 45 43 83 67 42 80 64 50 58 42 52 63 47 44 84 68 43 83 67 51 61 45 53 65 49 45 85 69 44 84 68 52 63 47 54 67 51 46 86 70 45 85 69 53 65 49 55 69 53 47 87 71 46 86 70 54 67 51 56 71 55 48 88 72 47 87 71 55 69 53 49 59 43 41 82 66 48 88 72 56 71 55 57 56 40 24 43 33 25 42 86 58 57 87 58 57 41 25 42 32 26 45 34 59 60 44 59 60 44 26 45 34 27 47 35 60 62 46 60 62 46 27 47 35 28 49 36 61 64 48 61 64 48 28 49 36 29 51 37 62 66 50 62 66 50 29 51 37 30 53 38 63 68 52 63 68 52 30 53 38 31 55 39 64 70 54 64 70 54 31 55 39 24 43 33 57 56 40 65 2 88 33 72 89 34 73 57 72 3 3 66 5 5 35 74 58 33 72 56 65 2 2 67 7 7 36 75 59 35 74 58 66 5 5 68 9 9 37 76 60 36 75 59 67 7 7 69 11 11 38 77 61 37 76 60 68 9 9 70 13 13 39 78 62 38 77 61 69 11 11 71 15 15 40 79 63 39 78 62 70 13 13 72 3 3 34 73 57 40 79 63 71 15 15</p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="morel.max" name="morel_max">
+      <node id="morel_low-node" name="morel_low" type="NODE">
+        <translate>0 0 0</translate>
+        <instance_geometry url="#morel_low-mesh">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="morel" target="#morel">
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="1"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0</start_time>
+          <end_time>1</end_time>
+        </technique>
+      </extra>
+      <extra>
+        <technique profile="MAX3D">
+          <frame_rate>30</frame_rate>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#morel.max"/>
+  </scene>
+</COLLADA>

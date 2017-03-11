@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>sasha</author>
+      <authoring_tool>3dsMax 11 - Feeling ColladaMax v3.05B.</authoring_tool>
+      <comments>ColladaMax Export Options: ExportNormals=1;ExportEPolyAsTriangles=0;ExportXRefs=0;ExportSelected=1;ExportTangents=0;ExportAnimations=0;SampleAnim=1;ExportAnimClip=0;BakeMatrices=0;ExportRelativePaths=1;AnimStart=0;AnimEnd=1;</comments>
+      <source_data>file:///D:/3ds%20Max%209/scenes/MY_MARCKET/3DOCEAN/models/forest/models/mushrooms/chanterelles/chanterelles.max</source_data>
+    </contributor>
+    <created>2010-08-02T08:45:32Z</created>
+    <modified>2010-08-02T08:45:33Z</modified>
+    <unit meter="1" name="meter"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="chanterelles_color.tif" name="chanterelles_color_tif">
+      <init_from>./chanterelles_color.tif</init_from>
+    </image>
+    <image id="chanterelles_specular.tif" name="chanterelles_specular_tif">
+      <init_from>./chanterelles_specular.tif</init_from>
+    </image>
+    <image id="chanterelles_bump.tif" name="chanterelles_bump_tif">
+      <init_from>./chanterelles_bump.tif</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="chanterelles" name="chanterelles">
+      <instance_effect url="#chanterelles-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="chanterelles-fx" name="chanterelles">
+      <profile_COMMON>
+        <newparam sid="chanterelles_color_tif-surface">
+          <surface type="2D">
+            <init_from>chanterelles_color.tif</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="chanterelles_color_tif-sampler">
+          <sampler2D>
+            <source>chanterelles_color_tif-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="chanterelles_specular_tif-surface">
+          <surface type="2D">
+            <init_from>chanterelles_specular.tif</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="chanterelles_specular_tif-sampler">
+          <sampler2D>
+            <source>chanterelles_specular_tif-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="chanterelles_bump_tif-surface">
+          <surface type="2D">
+            <init_from>chanterelles_bump.tif</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="chanterelles_bump_tif-sampler">
+          <sampler2D>
+            <source>chanterelles_bump_tif-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <ambient>
+              <color>0.588235 0.588235 0.588235 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="chanterelles_color_tif-sampler" texcoord="CHANNEL1">
+                <extra>
+                  <technique profile="MAYA">
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                  </technique>
+                  <technique profile="MAX3D">
+                    <amount>1</amount>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>0.464305</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>1</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA">
+              <spec_level>
+                <texture texture="chanterelles_specular_tif-sampler" texcoord="CHANNEL1">
+                  <extra>
+                    <technique profile="MAYA">
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <rotateUV>0</rotateUV>
+                    </technique>
+                    <technique profile="MAX3D">
+                      <amount>1</amount>
+                    </technique>
+                  </extra>
+                </texture>
+              </spec_level>
+              <bump>
+                <texture texture="chanterelles_bump_tif-sampler" texcoord="CHANNEL1">
+                  <extra>
+                    <technique profile="MAYA">
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <rotateUV>0</rotateUV>
+                    </technique>
+                    <technique profile="MAX3D">
+                      <amount>0.5</amount>
+                    </technique>
+                  </extra>
+                </texture>
+              </bump>
+              <emission_level>
+                <float>0</float>
+              </emission_level>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>0</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="chanterelles_low-mesh" name="chanterelles_low">
+      <mesh>
+        <source id="chanterelles_low-mesh-positions">
+          <float_array id="chanterelles_low-mesh-positions-array" count="195">0.003106 -0.024311 -0.050049 -0.004866 -0.00614 -0.05234 -0.024113 0.001693 -0.052718 -0.043361 -0.006286 -0.052718 -0.051334 -0.024737 -0.052718 -0.043361 -0.045684 -0.052718 -0.024113 -0.051756 -0.052718 -0.004866 -0.043429 -0.05234 0.071127 0.000653 0.312645 0.041549 0.070493 0.315355 -0.029644 0.100666 0.323528 -0.099028 0.071046 0.345505 -0.126994 0.000585 0.360521 -0.097145 -0.073223 0.359878 -0.026198 -0.100312 0.349821 0.043319 -0.070718 0.328861 0.174089 0.000809 0.389775 0.119536 0.151313 0.406753 -0.028679 0.219316 0.423609 -0.176894 0.153434 0.421315 -0.238286 0.005802 0.438917 -0.176894 -0.143144 0.434576 -0.028679 -0.204542 0.433375 0.119536 -0.14416 0.413779 -0.02856 0.013854 0.384993 -0.013708 -0.006102 0.189139 0.006241 -0.026447 0.197594 -0.035897 0.027501 0.186121 -0.064149 0.023838 0.18652 -0.068517 -0.029833 0.18652 -0.059114 -0.053004 0.186823 -0.036411 -0.060792 0.204228 -0.013708 -0.049402 0.206754 0.227279 0.00621 0.439325 0.149324 0.184413 0.457485 -0.026421 0.270432 0.467215 -0.179039 0.177403 0.490078 -0.261279 0.009475 0.535492 -0.191218 -0.158797 0.485645 -0.026421 -0.25181 0.496718 0.149324 -0.167059 0.469693 0.250819 0.001392 0.358597 0.171109 0.203743 0.392754 -0.027468 0.305728 0.420348 -0.226046 0.20629 0.416247 -0.320554 0.008556 0.478302 -0.226046 -0.191167 0.424389 -0.027468 -0.286771 0.418059 0.171109 -0.192773 0.398603 0.13899 0.001827 0.453419 0.085068 0.123356 0.477553 -0.036494 0.194706 0.481299 -0.133161 0.123791 0.489386 -0.186873 0.013809 0.529487 -0.036494 -0.182887 0.480365 0.085068 -0.11947 0.463024 -0.140573 -0.101865 0.457423 -0.027778 -0.000833 0.076357 -0.046198 0.020852 0.074504 -0.068119 0.016411 0.074735 -0.072965 -0.019954 0.074735 -0.065212 -0.039437 0.07491 -0.046495 -0.045703 0.084959 -0.027778 -0.0367 0.086528 -0.013935 -0.017874 0.081906</float_array>
+          <technique_common>
+            <accessor source="#chanterelles_low-mesh-positions-array" count="65" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="chanterelles_low-mesh-normals">
+          <float_array id="chanterelles_low-mesh-normals-array" count="243">0.988721 0.016105 0.148899 0.741496 0.667178 0.071121 0.762576 0.64689 -0.003307 0.998657 0.05129 0.00738 0.234235 0.968395 -0.085701 0.243304 0.965013 -0.097745 -0.707232 0.667963 -0.231623 -0.733566 0.669162 -0.118755 -0.981202 -0.076971 -0.176967 -0.992623 -0.094106 -0.076443 -0.651385 -0.75494 -0.075908 -0.703714 -0.70785 -0.061113 0.088748 -0.994238 0.060117 0.055858 -0.997343 -0.046761 0.669247 -0.730382 0.136569 0.630218 -0.775916 -0.02792 0.028871 0 -0.999583 0.028871 0 -0.999583 0.028871 0 -0.999583 0.028871 0 -0.999583 0.028871 0 -0.999583 0.028871 0 -0.999583 0.028871 0 -0.999583 0.028871 0 -0.999583 0.915503 -0.102831 -0.388948 0.729507 0.615491 -0.298312 0.501378 0.527181 -0.686076 0.721223 -0.025411 -0.692236 0.236512 0.916272 -0.323276 -0.021001 0.742662 -0.669337 -0.73417 0.640834 -0.224337 -0.604088 0.450042 -0.657678 -0.981405 -0.138355 -0.133049 -0.775392 -0.057081 -0.628894 -0.644535 -0.750834 -0.144303 -0.567936 -0.551319 -0.611143 0.050663 -0.976508 -0.20944 -0.045621 -0.808071 -0.587316 0.582402 -0.767169 -0.268813 0.475394 -0.628285 -0.615839 -0.004282 0.191503 -0.981483 0.035859 -0.025147 -0.99904 -0.064497 0.206561 -0.976306 -0.273653 0.100267 -0.956588 -0.391804 -0.027349 -0.919642 -0.236562 -0.086523 -0.967756 -0.073968 -0.151948 -0.985617 -0.039722 -0.180629 -0.982749 -0.245435 -0.027881 -0.969012 -0.343586 -0.013787 -0.93902 -0.05987 -0.054677 -0.996707 -0.118854 -0.068162 -0.990569 -0.262541 -0.018229 -0.964749 -0.089568 0.116181 -0.989181 -0.064456 0.164102 -0.984335 -0.269936 0.056297 -0.961231 0.530829 0.411048 0.74112 -0.016396 -0.132868 0.990998 -0.047793 0.003843 0.99885 0.72535 0.019418 0.688106 0.048396 0.62129 0.782085 0.087088 -0.057452 0.994542 -0.283395 0.472479 0.834536 0.311565 -0.009894 0.950173 -0.33914 0.005455 0.94072 0.409031 -0.039138 0.911681 0.330862 0.077942 0.940455 0.095481 -0.062299 0.99348 0.045859 0.322263 0.945539 0.510112 -0.345795 0.787535 -0.053191 0.24017 0.969272 0.032312 -0.509695 0.859748 0.724502 0.561012 0.400453 0.940978 -0.005031 0.33843 0.038425 0.833427 0.551291 -0.514538 0.621952 0.590276 -0.711477 0.01488 0.702552 -0.522904 -0.642155 0.560543 -0.270095 -0.415098 0.868759 0.029211 -0.877938 0.477882 0.716841 -0.584841 0.379606</float_array>
+          <technique_common>
+            <accessor source="#chanterelles_low-mesh-normals-array" count="81" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="chanterelles_low-mesh-map-channel1">
+          <float_array id="chanterelles_low-mesh-map-channel1-array" count="276">0.637381 0.594376 0.224001 0.631779 0.9752 0.163346 0.939965 0.985466 0.246437 0.673694 0.593639 0.242539 0.674152 0.973958 0.360705 0.71367 0.593639 0.226963 0.716487 0.97202 0.414625 0.343338 0.626872 0 0.30057 0.675705 0 0.211789 0.63764 0 0.213176 0.573133 0 0.408945 0.752021 0 0.354502 0.761812 0 0.344883 0.865127 0 0.305273 0.833217 0 0.753872 0.593639 0.181592 0.225112 0.92028 0 0.0663 0.091235 0 0.108993 0.054236 0 0.163354 0.054236 0 0.200807 0.101565 0 0.195278 0.155398 0 0.152304 0.191479 0 0.096515 0.186982 0 0.061313 0.146954 0 0.226743 0.86634 0 0.142586 0.840678 0 0.223838 0.75447 0 0.091319 0.768223 0 0.08971 0.63481 0 0.125344 0.679484 0 0.04138 0.763586 0 0.402847 0.581749 0 0.231472 0.517084 0 0.492917 0.747229 0 0.414252 0.913329 0 0.250528 0.988201 0 0.081295 0.924587 0 0.107599 0.900094 0 0.007358 0.760493 0 0.070678 0.591462 0 0.768323 0.97202 0.282109 0.798205 0.593975 0.106675 0.803604 0.97481 0.292545 0.834616 0.593303 0.055972 0.841313 0.993521 0.259846 0.886349 0.997798 0.204773 0.526653 0.259985 0 0.537548 0.282765 0 0.664548 0.239976 0 0.585381 0.166272 0 0.558806 0.311427 0 0.670258 0.350102 0 0.547192 0.333844 0 0.59672 0.42864 0 0.501173 0.321214 0 0.488652 0.431749 0 0.484728 0.30636 0 0.404296 0.355745 0 0.485124 0.285094 0 0.4026 0.247454 0 0.50149 0.269641 0 0.476168 0.168726 0 0.762933 0.195928 0 0.618126 0.074746 0 0.778514 0.38764 0 0.645699 0.525341 0 0.457299 0.53383 0 0.316977 0.405696 0 0.308717 0.216648 0 0.435436 0.076728 0 0.814452 0.17284 0 0.639793 0.01831 0 0.844387 0.410333 0 0.671364 0.573955 0 0.441958 0.584318 0 0.270878 0.42819 0 0.26035 0.19776 0 0.932995 0.594093 0.176707 0.990438 0.593703 0.224001 0.882151 0.593367 0.10535 0.993722 0.9752 0.163346 0.414915 0.02742 0 0.99208 0.784452 0.193674 0.63458 0.784788 0.193674 0.673923 0.783799 0.301622 0.715079 0.78283 0.320794 0.761097 0.78283 0.231851 0.800904 0.784393 0.19961 0.837964 0.793412 0.157909 0.88425 0.795583 0.155061 0.93648 0.78978 0.211572</float_array>
+          <technique_common>
+            <accessor source="#chanterelles_low-mesh-map-channel1-array" count="92" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="chanterelles_low-mesh-vertices">
+          <input semantic="POSITION" source="#chanterelles_low-mesh-positions"/>
+        </vertices>
+        <polylist material="chanterelles" count="65">
+          <input semantic="VERTEX" source="#chanterelles_low-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#chanterelles_low-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#chanterelles_low-mesh-map-channel1" offset="2" set="1"/>
+          <vcount>4 4 4 4 4 4 4 4 8 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 3 3 4 4 4 4 4 4 4 4 4 4 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4</vcount>
+          <p>0 0 78 1 1 79 57 2 83 64 3 91 1 1 0 2 4 3 58 5 85 57 2 84 2 4 3 3 6 5 59 7 86 58 5 85 3 6 5 4 8 15 60 9 87 59 7 86 4 8 15 5 10 42 61 11 88 60 9 87 5 10 42 6 12 44 62 13 89 61 11 88 6 12 44 7 14 80 63 15 90 62 13 89 7 14 80 0 0 78 64 3 91 63 15 90 7 16 17 6 17 18 5 18 19 4 19 20 3 20 21 2 21 22 1 22 23 0 23 24 26 24 47 25 25 48 9 26 49 8 27 50 25 25 48 27 28 51 10 29 52 9 26 49 27 28 51 28 30 53 11 31 54 10 29 52 28 30 53 29 32 55 12 33 56 11 31 54 29 32 55 30 34 57 13 35 58 12 33 56 30 34 57 31 36 59 14 37 60 13 35 58 31 36 59 32 38 61 15 39 62 14 37 60 32 38 61 26 24 47 8 27 50 15 39 62 8 27 50 9 26 49 17 40 63 16 41 64 9 26 49 10 29 52 18 42 65 17 40 63 10 29 52 11 31 54 19 43 66 18 42 65 11 31 54 12 33 56 20 44 67 19 43 66 12 33 56 13 35 58 21 45 68 20 44 67 13 35 58 14 37 60 22 46 69 21 45 68 14 37 60 15 39 62 23 47 70 22 46 69 15 39 62 8 27 50 16 41 64 23 47 70 16 41 64 17 40 63 42 48 71 41 49 72 17 40 63 18 42 65 43 50 73 42 48 71 18 42 65 19 43 66 44 51 74 43 50 73 19 43 66 20 44 67 45 52 75 44 51 74 20 44 67 21 45 68 46 53 76 45 52 75 21 45 68 22 46 69 47 54 77 46 53 76 22 46 69 23 47 70 48 55 82 47 54 77 23 47 70 16 41 64 41 49 72 48 55 82 34 56 7 50 57 8 49 58 9 33 59 10 35 60 11 51 61 12 50 57 8 34 56 7 36 62 13 52 63 14 51 61 12 35 60 11 37 64 16 53 65 25 52 63 14 36 62 13 56 66 26 24 67 27 53 65 25 54 68 28 24 67 27 56 66 26 40 69 29 55 70 30 54 68 28 39 71 31 33 59 10 49 58 9 55 70 30 40 69 29 42 72 32 34 56 7 33 59 10 41 73 33 43 74 34 35 60 11 34 56 7 42 72 32 44 75 35 36 62 13 35 60 11 43 74 34 45 76 36 37 64 16 36 62 13 44 75 35 46 77 37 38 78 38 37 64 16 45 76 36 47 79 39 39 71 31 38 78 38 46 77 37 48 80 40 40 69 29 39 71 31 47 79 39 41 73 33 33 59 10 40 69 29 48 80 40 50 57 8 24 67 27 49 58 9 51 61 12 24 67 27 50 57 8 52 63 14 24 67 27 51 61 12 53 65 25 24 67 27 52 63 14 55 70 30 24 67 27 54 68 28 49 58 9 24 67 27 55 70 30 53 65 25 37 64 16 38 78 38 56 66 26 56 66 26 38 78 38 39 71 31 54 68 28 57 2 83 25 25 81 26 24 2 64 3 91 58 5 85 27 28 4 25 25 1 57 2 84 59 7 86 28 30 6 27 28 4 58 5 85 60 9 87 29 32 41 28 30 6 59 7 86 61 11 88 30 34 43 29 32 41 60 9 87 62 13 89 31 36 45 30 34 43 61 11 88 63 15 90 32 38 46 31 36 45 62 13 89 64 3 91 26 24 2 32 38 46 63 15 90</p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="chanterelles.max" name="chanterelles_max">
+      <node id="chanterelles_low-node" name="chanterelles_low" type="NODE">
+        <translate>0 0 0</translate>
+        <instance_geometry url="#chanterelles_low-mesh">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="chanterelles" target="#chanterelles">
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="1"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0</start_time>
+          <end_time>1</end_time>
+        </technique>
+      </extra>
+      <extra>
+        <technique profile="MAX3D">
+          <frame_rate>30</frame_rate>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#chanterelles.max"/>
+  </scene>
+</COLLADA>

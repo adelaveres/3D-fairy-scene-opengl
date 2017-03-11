@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>sasha</author>
+      <authoring_tool>3dsMax 11 - Feeling ColladaMax v3.05B.</authoring_tool>
+      <comments>ColladaMax Export Options: ExportNormals=1;ExportEPolyAsTriangles=0;ExportXRefs=0;ExportSelected=1;ExportTangents=0;ExportAnimations=0;SampleAnim=1;ExportAnimClip=0;BakeMatrices=0;ExportRelativePaths=1;AnimStart=0;AnimEnd=1;</comments>
+      <source_data>file:///D:/3ds%20Max%209/scenes/MY_MARCKET/3DOCEAN/models/forest/models/mushrooms/big_ambrela/big_ambrela.max</source_data>
+    </contributor>
+    <created>2010-08-02T08:41:15Z</created>
+    <modified>2010-08-02T08:41:16Z</modified>
+    <unit meter="1" name="meter"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="ambrela_color.tif" name="ambrela_color_tif">
+      <init_from>./ambrela_color.tif</init_from>
+    </image>
+    <image id="ambrela_specular.tif" name="ambrela_specular_tif">
+      <init_from>./ambrela_specular.tif</init_from>
+    </image>
+    <image id="ambrela_bump.tif" name="ambrela_bump_tif">
+      <init_from>./ambrela_bump.tif</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="ambrela" name="ambrela">
+      <instance_effect url="#ambrela-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="ambrela-fx" name="ambrela">
+      <profile_COMMON>
+        <newparam sid="ambrela_color_tif-surface">
+          <surface type="2D">
+            <init_from>ambrela_color.tif</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="ambrela_color_tif-sampler">
+          <sampler2D>
+            <source>ambrela_color_tif-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="ambrela_specular_tif-surface">
+          <surface type="2D">
+            <init_from>ambrela_specular.tif</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="ambrela_specular_tif-sampler">
+          <sampler2D>
+            <source>ambrela_specular_tif-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="ambrela_bump_tif-surface">
+          <surface type="2D">
+            <init_from>ambrela_bump.tif</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="ambrela_bump_tif-sampler">
+          <sampler2D>
+            <source>ambrela_bump_tif-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <ambient>
+              <color>0.588235 0.588235 0.588235 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="ambrela_color_tif-sampler" texcoord="CHANNEL1">
+                <extra>
+                  <technique profile="MAYA">
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                  </technique>
+                  <technique profile="MAX3D">
+                    <amount>1</amount>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>0.415939</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>1</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA">
+              <spec_level>
+                <texture texture="ambrela_specular_tif-sampler" texcoord="CHANNEL1">
+                  <extra>
+                    <technique profile="MAYA">
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <rotateUV>0</rotateUV>
+                    </technique>
+                    <technique profile="MAX3D">
+                      <amount>1</amount>
+                    </technique>
+                  </extra>
+                </texture>
+              </spec_level>
+              <bump>
+                <texture texture="ambrela_bump_tif-sampler" texcoord="CHANNEL1">
+                  <extra>
+                    <technique profile="MAYA">
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <rotateUV>0</rotateUV>
+                    </technique>
+                    <technique profile="MAX3D">
+                      <amount>0.5</amount>
+                    </technique>
+                  </extra>
+                </texture>
+              </bump>
+              <emission_level>
+                <float>0</float>
+              </emission_level>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>0</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="big_ambrela_low-mesh" name="big_ambrela_low">
+      <mesh>
+        <source id="big_ambrela_low-mesh-positions">
+          <float_array id="big_ambrela_low-mesh-positions-array" count="243">0.058971 0.000733 -0.139353 0.03997 0.046606 -0.139353 -0.005902 0.065607 -0.139353 -0.051776 0.046606 -0.139353 -0.070777 0.000733 -0.139353 -0.051776 -0.04514 -0.139353 -0.005902 -0.064141 -0.139353 0.03997 -0.04514 -0.139353 0.096874 0.000733 0.212221 0.068535 0.06915 0.212221 0.000118 0.097489 0.212221 -0.068298 0.06915 0.212221 -0.096637 0.000733 0.212221 -0.068298 -0.067683 0.212221 0.000118 -0.096023 0.212221 0.068535 -0.067683 0.212221 0.054388 -0.003845 1.27423 0.039545 0.031992 1.27443 0.00371 0.046837 1.28031 -0.032125 0.031992 1.26824 -0.046968 -0.003845 1.27558 -0.032125 -0.039684 1.28086 0.00371 -0.054528 1.28396 0.039545 -0.039684 1.27443 0.528819 0.003399 1.18839 0.389359 0.388861 1.19539 0.00597 0.61447 1.24177 -0.424731 0.405978 1.32223 -0.58424 -0.0247 1.30373 -0.424984 -0.426298 1.20256 0.005372 -0.603986 1.1679 0.436209 -0.426363 1.17686 0.00409 -0.043826 1.60255 0.101836 0.10245 0.078451 0.143969 0.000733 0.078451 0.000118 0.144583 0.078451 -0.101599 0.10245 0.078451 -0.143731 0.000733 0.078451 -0.101599 -0.100984 0.078451 0.000118 -0.143117 0.078451 0.101836 -0.100984 0.078451 0.04731 -0.001387 0.915373 0.03187 0.035903 0.91494 -0.005405 0.051349 0.913896 -0.042682 0.035903 0.912852 -0.058122 -0.001387 0.89996 -0.042682 -0.038678 0.887203 -0.005405 -0.054125 0.892104 0.03187 -0.038678 0.902481 0.157858 -0.00152 0.921464 0.110053 0.113934 0.90212 -0.005356 0.161758 0.913041 -0.120767 0.113934 0.913661 -0.168571 -0.00152 0.902673 -0.120767 -0.116976 0.873015 -0.005356 -0.164799 0.88959 0.110053 -0.116976 0.90212 0.364674 -0.003895 1.27867 0.232635 0.227992 1.29669 0.001749 0.363185 1.31032 -0.256018 0.236467 1.31069 -0.361612 -0.021338 1.31245 -0.25462 -0.260056 1.28734 0.001405 -0.365163 1.28435 0.257303 -0.259736 1.26815 0.053387 -0.001645 0.953267 0.036324 0.039563 0.940358 -0.004868 0.056633 0.944369 -0.046062 0.039563 0.950319 -0.063125 -0.001645 0.940599 -0.046062 -0.042854 0.930673 -0.004868 -0.059924 0.936496 0.036324 -0.042854 0.940358 0.191419 -0.005746 1.45962 0.115844 0.099508 1.44436 -0.002499 0.196996 1.44811 -0.162937 0.144299 1.44834 -0.230026 -0.019497 1.44946 -0.162049 -0.171167 1.43351 0.000616 -0.237946 1.43161 0.1632 -0.170963 1.44714</float_array>
+          <technique_common>
+            <accessor source="#big_ambrela_low-mesh-positions-array" count="81" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="big_ambrela_low-mesh-normals">
+          <float_array id="big_ambrela_low-mesh-normals-array" count="363">1 0 0 0 1 0 0 1 0 1 0 0 0 1 0 0 1 0 0.046956 0 0.998897 0.044888 0.045062 0.997975 0.894428 0.447214 0 0 1 0 0.707112 0.707112 0 0 1 0 1 0 0 0.707102 0 0.707101 1 0 0 1 0 0 0.045981 0.998942 0 0.045981 0.998942 0 0.045981 0.998942 0 0.045981 0.998942 0 0.045981 0.998942 0 0.045981 0.998942 0 0.045981 0.998942 0 0.045981 0.998942 0 0 0 1.00001 0.707105 0.707109 0 0 0 1.00001 0.043777 0.999041 0 0 1 0 0 1 0 0.707102 0 0.707103 0.72283 0.691026 0 0 0 1.00001 1 0 0 0 0 1 0.04598 0.998942 0 0.04598 0.998942 0 1 0 0 1 0 0 1 0 0 0.04598 0.998942 0 0 0 1 0 0 0.999992 0.04598 0.998942 0 0.70401 0 0.710187 0.725104 0 0.688628 0.999034 0.043948 0 0.999036 0.043907 0 0.998942 0.045992 0 0.998942 0.045992 0 0 0 1 0 0 1 0 0 1 0 0 1 0.04598 0.998942 0 0.04598 0.998942 0 0.869888 0.493249 0 1 0 0 0 0 0.999997 0.020552 0.999789 0 1 0 0 0.999398 0 0.034699 0 0.999998 0 0.897669 0.440669 0 0 1 0 0.685234 0.727115 0.041935 0 1 0 0 0.054125 0.998534 0.707138 0 0.707075 0.053056 0 0.998591 0.878973 0.476872 0 0.042648 0.99909 0 1 0 0 1 0 0 0 1 0 0 1 0 1 0 0 1 0 0 0.045979 0.998942 0 0.045979 0.998942 0 0.022924 0.999737 0 0.022973 0.999736 0 0 1 0 0 1 0 1 0 0 1 0 0 0 1 0 0 1 0 0 0.761293 0.648408 0 0.779595 0.626284 0.020889 0.999782 0 0.020856 0.999782 0 0.045212 0 0.998977 0.047371 0 0.998877 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0.999999 0 0 1 0 0 0.095462 0.995433 0 0.088825 0.996047 0 1 0 0 1 0 0 1 0 0 0 1.00001 0 0 1 0 0 1 0 0.723118 0 0.690722 1 0 0 1 0 0 1 0 0 1 0 0 0.045978 0.998942 0 0.045978 0.998942 0 1 0 0 1 0 0 1 0 0 0.623349 0.657934 0.422562</float_array>
+          <technique_common>
+            <accessor source="#big_ambrela_low-mesh-normals-array" count="121" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="big_ambrela_low-mesh-map-channel1">
+          <float_array id="big_ambrela_low-mesh-map-channel1-array" count="381">0.574402 0.269644 0.246128 0.631568 0.269644 0.254128 0.626882 0.377851 0.500001 0.574402 0.377851 0.500001 0.685547 0.269644 0.272475 0.679362 0.377851 0.5 0.735953 0.269644 0.289663 0.731843 0.377851 0.5 0.784323 0.269644 0.29649 0.784323 0.377851 0.5 0.832693 0.269644 0.289661 0.836803 0.377851 0.499998 0.8831 0.269644 0.272473 0.889284 0.377851 0.499998 0.937078 0.269644 0.254127 0.941764 0.377851 0.5 0.543116 0.399625 0 0.497801 0.380855 0 0.452486 0.399625 0 0.433715 0.444941 0 0.452486 0.490256 0 0.497801 0.509027 0 0.543116 0.490256 0 0.561887 0.444941 0 0.201166 0.52449 0 0.350227 0.539961 0 0.31278 0.627666 0 0.238525 0.61203 0 0.472791 0.630379 0 0.393192 0.668755 0 0.464972 0.791943 0 0.402247 0.767671 0 0.626882 0.452032 0.27729 0.574402 0.452032 0.27729 0.679362 0.452032 0.27729 0.731843 0.452032 0.277289 0.784323 0.452032 0.277289 0.836803 0.452032 0.277288 0.889284 0.452032 0.277288 0.941764 0.452032 0.277289 0.630292 0.997446 0.198157 0.571401 0.997576 0.19756 0.266561 0.19506 0 0.251115 0.206377 0 0.080627 0.104861 0 0.219567 0.012996 0 0.2482 0.225384 0 0.028511 0.27934 0 0.259514 0.240632 0 0.152573 0.429383 0 0.355324 0.904395 0 0.329468 0.842311 0 0.207485 0.902031 0 0.231339 0.840742 0 0.095766 0.793336 0 0.157186 0.768596 0 0.093433 0.638215 0 0.155637 0.665634 0 0.686626 0.99713 0.212938 0.738361 0.996815 0.231673 0.786755 0.992923 0.243729 0.83405 0.989071 0.243321 0.882577 0.990551 0.23058 0.934599 0.993684 0.211658 0.633766 0.780825 0.222032 0.623857 0.986157 0.210421 0.57401 0.986099 0.227768 0.576623 0.784678 0.222997 0.689221 0.782022 0.234705 0.678206 0.987912 0.193394 0.740926 0.783798 0.25233 0.736252 0.984308 0.187811 0.789598 0.780897 0.264676 0.793518 0.9865 0.197849 0.837092 0.777934 0.265571 0.845918 0.157773 0 0.907977 0.219712 0 0.945923 0.128067 0 0.858174 0.128173 0 0.816329 0.170034 0 0.816368 0.257673 0 0.78674 0.157773 0 0.724759 0.219712 0 0.182618 0.474749 0 0.380625 0.461321 0 0.556433 0.590437 0 0.546588 0.822286 0 0.389239 0.985081 0 0.175345 0.982426 0 0.013139 0.825243 0 0.009779 0.600213 0 0.8464 0.988076 0.216224 0.885466 0.779672 0.254528 0.895173 0.989001 0.231595 0.936677 0.780825 0.236972 0.941952 0.986157 0.23613 0.263864 0.725365 0 0.278443 0.243662 0 0.340115 0.458388 0 0.293891 0.23243 0 0.481652 0.348592 0 0.29681 0.213563 0 0.510311 0.16129 0 0.285487 0.197978 0 0.398454 0.008692 0 0.774484 0.128173 0 0.686814 0.128067 0 0.78674 0.098572 0 0.724759 0.036422 0 0.816329 0.086311 0 0.816368 -0.001538 0 0.845918 0.098572 0 0.907977 0.036422 0 0.849454 0.160679 0 0.862998 0.127968 0 0.816755 0.174228 0 0.784057 0.160679 0 0.770513 0.127968 0 0.784057 0.095257 0 0.816755 0.081708 0 0.849454 0.095257 0 0.994244 0.269644 0.246128 0.994244 0.452032 0.27729 0.991243 0.997576 0.19756 0.994244 0.377851 0.500001 0.991709 0.784678 0.222997 0.989096 0.986099 0.227768</float_array>
+          <technique_common>
+            <accessor source="#big_ambrela_low-mesh-map-channel1-array" count="127" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="big_ambrela_low-mesh-vertices">
+          <input semantic="POSITION" source="#big_ambrela_low-mesh-positions"/>
+        </vertices>
+        <polylist material="ambrela" count="81">
+          <input semantic="VERTEX" source="#big_ambrela_low-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#big_ambrela_low-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#big_ambrela_low-mesh-map-channel1" offset="2" set="1"/>
+          <vcount>4 4 4 4 4 4 4 4 8 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 3 3 3 3 3 3 3 3</vcount>
+          <p>0 0 0 1 1 1 33 2 2 34 3 3 1 1 1 2 4 4 35 5 5 33 2 2 2 4 4 3 6 6 36 7 7 35 5 5 3 6 6 4 8 8 37 9 9 36 7 7 4 8 8 5 10 10 38 11 11 37 9 9 5 10 10 6 12 12 39 13 13 38 11 11 6 12 12 7 14 14 40 15 15 39 13 13 7 14 14 0 0 121 34 3 124 40 15 15 7 16 16 6 17 17 5 18 18 4 19 19 3 20 20 2 21 21 1 22 22 0 23 23 34 3 3 33 2 2 9 24 32 8 25 33 33 2 2 35 5 5 10 26 34 9 24 32 35 5 5 36 7 7 11 27 35 10 26 34 36 7 7 37 9 9 12 28 36 11 27 35 37 9 9 38 11 11 13 29 37 12 28 36 38 11 11 39 13 13 14 30 38 13 29 37 39 13 13 40 15 15 15 31 39 14 30 38 40 15 15 34 3 124 8 25 122 15 31 39 8 25 33 9 24 32 42 32 40 41 33 41 9 24 32 10 26 34 43 34 58 42 32 40 10 26 34 11 27 35 44 35 59 43 34 58 11 27 35 12 28 36 45 36 60 44 35 59 12 28 36 13 29 37 46 37 61 45 36 60 13 29 37 14 30 38 47 38 62 46 37 61 14 30 38 15 31 39 48 39 63 47 38 62 15 31 39 8 25 122 41 33 123 48 39 63 16 40 42 17 41 43 25 42 44 24 43 45 17 41 43 18 44 46 26 45 47 25 42 44 18 44 46 19 46 48 27 47 49 26 45 47 19 46 48 20 48 97 28 49 98 27 47 49 20 48 97 21 50 99 29 51 100 28 49 98 21 50 99 22 52 101 30 53 102 29 51 100 22 52 101 23 54 103 31 55 104 30 53 102 23 54 103 16 40 42 24 43 45 31 55 104 57 56 24 58 57 25 74 58 26 73 59 27 58 57 25 59 60 28 75 61 29 74 58 26 59 60 28 60 62 30 76 63 31 75 61 29 60 62 30 61 64 50 77 65 51 76 63 31 61 64 50 62 66 52 78 67 53 77 65 51 62 66 52 63 68 54 79 69 55 78 67 53 63 68 54 64 70 56 80 71 57 79 69 55 64 70 56 57 56 24 73 59 27 80 71 57 42 72 75 50 73 76 49 74 77 41 75 78 43 76 79 51 77 80 50 73 76 42 72 75 44 78 81 52 79 82 51 77 80 43 76 79 45 80 105 53 81 106 52 79 82 44 78 81 46 82 107 54 83 108 53 81 106 45 80 105 47 84 109 55 85 110 54 83 108 46 82 107 48 86 111 56 87 112 55 85 110 47 84 109 41 75 78 49 74 77 56 87 112 48 86 111 50 88 76 66 89 113 65 90 114 49 91 77 51 92 80 67 93 115 66 89 113 50 88 76 52 94 82 68 95 116 67 93 115 51 92 80 53 96 106 69 97 117 68 95 116 52 94 82 54 98 108 70 99 118 69 97 117 53 96 106 55 100 110 71 101 119 70 99 118 54 98 108 56 102 112 72 103 120 71 101 119 55 100 110 49 91 77 65 90 114 72 103 120 56 102 112 57 56 24 24 104 83 25 105 84 58 57 25 58 57 25 25 105 84 26 106 85 59 60 28 59 60 28 26 106 85 27 107 86 60 62 30 60 62 30 27 107 86 28 108 87 61 64 50 61 64 50 28 108 87 29 109 88 62 66 52 62 66 52 29 109 88 30 110 89 63 68 54 63 68 54 30 110 89 31 111 90 64 70 56 64 70 56 31 111 90 24 104 83 57 56 24 66 89 64 17 112 65 16 113 66 65 90 67 67 93 68 18 114 69 17 112 65 66 89 64 68 95 70 19 115 71 18 114 69 67 93 68 69 97 72 20 116 73 19 115 71 68 95 70 70 99 74 21 117 91 20 116 73 69 97 72 71 101 92 22 118 93 21 117 91 70 99 74 72 103 94 23 119 95 22 118 93 71 101 92 65 90 125 16 113 126 23 119 95 72 103 94 74 58 26 32 120 96 73 59 27 75 61 29 32 120 96 74 58 26 76 63 31 32 120 96 75 61 29 77 65 51 32 120 96 76 63 31 78 67 53 32 120 96 77 65 51 79 69 55 32 120 96 78 67 53 80 71 57 32 120 96 79 69 55 73 59 27 32 120 96 80 71 57</p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="big_ambrela.max" name="big_ambrela_max">
+      <node id="big_ambrela_low-node" name="big_ambrela_low" type="NODE">
+        <translate>0 0 0</translate>
+        <instance_geometry url="#big_ambrela_low-mesh">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="ambrela" target="#ambrela">
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="1"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0</start_time>
+          <end_time>1</end_time>
+        </technique>
+      </extra>
+      <extra>
+        <technique profile="MAX3D">
+          <frame_rate>30</frame_rate>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#big_ambrela.max"/>
+  </scene>
+</COLLADA>

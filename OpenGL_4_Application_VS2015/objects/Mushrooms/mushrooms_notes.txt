@@ -1,0 +1,49 @@
+Forest mushrooms collection
+
+Game Forest mushrooms in 3D Max file (version 2009 minimum).
+
+.FBX, DAE (Collada) and .OBJ files are included.
+
+Collection includes 7 types of mushrooms:
+
+AMANITA
+1. amanita_A - 153 polygons
+2. amanita_A_low – 65 polygons
+3. amanita_B - 144 polygons
+4. amanita_B_low – 73 polygons
+
+BIG AMBRELLA
+1. big_ambrella - 184 polygons
+2. big_ambrella_low – 81 polygons
+
+BOLETUS
+1. boletus - 160 polygons
+2. boletus_low – 65 polygons
+
+CHANTERELLES
+1. chanterelles - 184 polygons
+2. chanterelles_low – 81 polygons
+
+MOREL
+1. morel - 144 polygons
+2. morel_low – 73 polygons
+
+MYSTICAL TRUFFELS
+1. mystical_truffles - 207 polygons
+2. mystical_truffles_low – 80 polygons
+
+RUSSULA (3 different color textures)
+1. russula - 160 polygons
+2. russula_truffles_low – 57 polygons
+
+
+There are no use of camera taking textures. It all was painted in Photoshop.
+
+All textures in .TIF file format and 512x512 px. 
+
+Every material/shader use 3 maps: diffuse, specular and bump/normals. 
+
+If you have any question using this model, pleas send it to me. My mail is mr.necturus@gmail.com
+
+
+Low polygonal model, game ready model, tree, forest, birch, nature, video game, simulation, fantasy, wow, RPG, FPS

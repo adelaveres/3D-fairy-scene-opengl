@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>sasha</author>
+      <authoring_tool>3dsMax 11 - Feeling ColladaMax v3.05B.</authoring_tool>
+      <comments>ColladaMax Export Options: ExportNormals=1;ExportEPolyAsTriangles=0;ExportXRefs=0;ExportSelected=1;ExportTangents=0;ExportAnimations=0;SampleAnim=1;ExportAnimClip=0;BakeMatrices=0;ExportRelativePaths=1;AnimStart=0;AnimEnd=1;</comments>
+      <source_data>file:///D:/3ds%20Max%209/scenes/MY_MARCKET/3DOCEAN/models/forest/models/mushrooms/amanita/amanita.max</source_data>
+    </contributor>
+    <created>2010-08-02T08:35:07Z</created>
+    <modified>2010-08-02T08:35:07Z</modified>
+    <unit meter="1" name="meter"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="amanita_color.tif" name="amanita_color_tif">
+      <init_from>./amanita_color.tif</init_from>
+    </image>
+    <image id="amanita_specular.tif" name="amanita_specular_tif">
+      <init_from>./amanita_specular.tif</init_from>
+    </image>
+    <image id="amanita_bump.tif" name="amanita_bump_tif">
+      <init_from>./amanita_bump.tif</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="amanita" name="amanita">
+      <instance_effect url="#amanita-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="amanita-fx" name="amanita">
+      <profile_COMMON>
+        <newparam sid="amanita_color_tif-surface">
+          <surface type="2D">
+            <init_from>amanita_color.tif</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="amanita_color_tif-sampler">
+          <sampler2D>
+            <source>amanita_color_tif-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="amanita_specular_tif-surface">
+          <surface type="2D">
+            <init_from>amanita_specular.tif</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="amanita_specular_tif-sampler">
+          <sampler2D>
+            <source>amanita_specular_tif-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <newparam sid="amanita_bump_tif-surface">
+          <surface type="2D">
+            <init_from>amanita_bump.tif</init_from>
+            <format>A8R8G8B8</format>
+          </surface>
+        </newparam>
+        <newparam sid="amanita_bump_tif-sampler">
+          <sampler2D>
+            <source>amanita_bump_tif-surface</source>
+            <wrap_s>WRAP</wrap_s>
+            <wrap_t>WRAP</wrap_t>
+            <minfilter>NONE</minfilter>
+            <magfilter>NONE</magfilter>
+            <mipfilter>NONE</mipfilter>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <blinn>
+            <ambient>
+              <color>0.588235 0.588235 0.588235 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="amanita_color_tif-sampler" texcoord="CHANNEL1">
+                <extra>
+                  <technique profile="MAYA">
+                    <mirrorU>0</mirrorU>
+                    <mirrorV>0</mirrorV>
+                    <wrapU>1</wrapU>
+                    <wrapV>1</wrapV>
+                    <repeatU>1</repeatU>
+                    <repeatV>1</repeatV>
+                    <offsetU>0</offsetU>
+                    <offsetV>0</offsetV>
+                    <rotateUV>0</rotateUV>
+                  </technique>
+                  <technique profile="MAX3D">
+                    <amount>1</amount>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <specular>
+              <color>0.9 0.9 0.9 1</color>
+            </specular>
+            <shininess>
+              <float>0.206965</float>
+            </shininess>
+            <reflective>
+              <color>0 0 0 1</color>
+            </reflective>
+            <reflectivity>
+              <float>1</float>
+            </reflectivity>
+            <transparent opaque="A_ONE">
+              <color>1 1 1 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </blinn>
+          <extra>
+            <technique profile="FCOLLADA">
+              <spec_level>
+                <texture texture="amanita_specular_tif-sampler" texcoord="CHANNEL1">
+                  <extra>
+                    <technique profile="MAYA">
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <rotateUV>0</rotateUV>
+                    </technique>
+                    <technique profile="MAX3D">
+                      <amount>1</amount>
+                    </technique>
+                  </extra>
+                </texture>
+              </spec_level>
+              <bump>
+                <texture texture="amanita_bump_tif-sampler" texcoord="CHANNEL1">
+                  <extra>
+                    <technique profile="MAYA">
+                      <mirrorU>0</mirrorU>
+                      <mirrorV>0</mirrorV>
+                      <wrapU>1</wrapU>
+                      <wrapV>1</wrapV>
+                      <repeatU>1</repeatU>
+                      <repeatV>1</repeatV>
+                      <offsetU>0</offsetU>
+                      <offsetV>0</offsetV>
+                      <rotateUV>0</rotateUV>
+                    </technique>
+                    <technique profile="MAX3D">
+                      <amount>0.5</amount>
+                    </technique>
+                  </extra>
+                </texture>
+              </bump>
+              <emission_level>
+                <float>0</float>
+              </emission_level>
+            </technique>
+          </extra>
+        </technique>
+      </profile_COMMON>
+      <extra>
+        <technique profile="MAX3D">
+          <faceted>0</faceted>
+          <double_sided>0</double_sided>
+          <wireframe>0</wireframe>
+          <face_map>0</face_map>
+        </technique>
+      </extra>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="amanita_B_low-mesh" name="amanita_B_low">
+      <mesh>
+        <source id="amanita_B_low-mesh-positions">
+          <float_array id="amanita_B_low-mesh-positions-array" count="219">0.06507 -0.000504 -0.10122 0.044233 0.049801 -0.10122 -0.006072 0.070638 -0.10122 -0.056378 0.049801 -0.10122 -0.077216 -0.000504 -0.10122 -0.056378 -0.05081 -0.10122 -0.006072 -0.071648 -0.10122 0.044233 -0.05081 -0.10122 0.089572 -0.000504 0.206727 0.063239 0.063069 0.220479 -0.000334 0.089402 0.220479 -0.063908 0.063069 0.207865 -0.090241 -0.000504 0.220479 -0.063908 -0.064078 0.220479 -0.000334 -0.090411 0.233466 0.063239 -0.064078 0.220479 0.062848 -0.000504 0.254915 0.044342 0.044172 0.254915 -0.000334 0.062678 0.254915 -0.045012 0.044172 0.254915 -0.063517 -0.000504 0.254915 -0.045012 -0.045181 0.254915 -0.000334 -0.063687 0.254915 0.044342 -0.045181 0.254915 0.052987 -0.004267 0.621246 0.03768 0.03269 0.621449 0.000725 0.047998 0.627511 -0.036229 0.03269 0.615059 -0.051536 -0.004267 0.622631 -0.036229 -0.041225 0.628076 0.000725 -0.056534 0.631274 0.03768 -0.041225 0.621449 0.388311 0.000363 0.648448 0.24609 0.245714 0.597126 0.001629 0.389569 0.655434 -0.272999 0.256628 0.654403 -0.386858 -0.017986 0.65678 -0.273161 -0.274057 0.630434 0.001248 -0.387356 0.627186 0.275963 -0.274098 0.652153 0.002466 -0.034964 0.809044 0.072477 0.072307 0.158925 0.102637 -0.000504 0.158925 -0.000334 0.102467 0.158925 -0.073146 0.072307 0.158925 -0.103306 -0.000504 0.158925 -0.073146 -0.073316 0.158925 -0.000334 -0.103476 0.158925 0.072477 -0.073316 0.158925 0.050029 -0.002029 0.484235 0.033173 0.038681 0.483763 -0.007521 0.055543 0.482624 -0.048215 0.038681 0.481484 -0.065071 -0.002029 0.481012 -0.048215 -0.042739 0.481484 -0.007521 -0.059602 0.482624 0.033173 -0.042739 0.483763 0.08061 -0.002174 0.483171 0.054813 0.06013 0.482448 -0.007467 0.085937 0.488342 -0.069747 0.06013 0.47896 -0.095545 -0.002174 0.482746 -0.069747 -0.064479 0.466742 -0.007467 -0.090287 0.475686 0.054813 -0.064479 0.482448 0.336746 -0.003113 0.673739 0.214666 0.211285 0.652246 0.001194 0.336281 0.703002 -0.237131 0.219121 0.703344 -0.334762 -0.01924 0.704973 -0.235839 -0.239953 0.681757 0.000876 -0.337133 0.678988 0.237473 -0.239658 0.701597</float_array>
+          <technique_common>
+            <accessor source="#amanita_B_low-mesh-positions-array" count="73" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="amanita_B_low-mesh-normals">
+          <float_array id="amanita_B_low-mesh-normals-array" count="339">0.989734 0 -0.142922 0.697702 0.703246 -0.136589 0.710992 0.702005 0.04097 0.999091 0 0.042619 -0.005534 0.992598 -0.12132 -0.0015 0.998856 0.047789 -0.705872 0.70035 -0.106087 -0.704533 0.707166 0.059576 -0.995009 -0.000000 -0.099789 -0.998283 0.004086 0.058439 -0.705872 -0.70035 -0.106087 -0.707564 -0.705241 0.044586 -0.005534 -0.992598 -0.12132 0.00259 -0.999448 0.033109 0.697702 -0.703246 -0.136589 0.713589 -0.699637 0.036041 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0.934494 0 0.355979 0.661647 0.632865 0.402125 0.677731 0.64427 0.354395 0.946048 0.000756 0.324026 -0.01871 0.915408 0.402093 -0.016791 0.937803 0.346762 -0.660006 0.660006 0.358866 -0.671171 0.675533 0.305261 -0.915408 0.01871 0.402093 -0.944145 0.021095 0.328855 -0.662144 -0.63345 0.400384 -0.673947 -0.637356 0.373594 0 -0.88544 0.464755 0.003615 -0.904858 0.425699 0.675926 -0.6184 0.400881 0.692177 -0.617663 0.373341 0.706235 0.706106 0.051438 0.998438 -0.001645 0.055846 -0.001357 0.999511 0.031255 -0.708476 0.7057 0.007061 -0.999975 -0.00164 -0.00689 -0.706777 -0.707433 -0.002379 -0.001147 -0.999839 0.017883 0.704975 -0.707989 0.041974 0.072621 -0.094753 -0.992848 -0.059946 -0.035231 -0.99758 -0.06164 -0.033716 -0.997529 0.073064 -0.092515 -0.993027 -0.096732 0.094668 -0.990798 -0.093551 0.095386 -0.991035 -0.065682 0.066479 -0.995623 -0.066039 0.06617 -0.995621 -0.100573 0.027042 -0.994562 -0.09954 0.027485 -0.994654 -0.038957 0.019384 -0.999053 -0.039919 0.019786 -0.999007 0.029282 -0.009932 -0.999522 0.029447 -0.010005 -0.999516 0.070031 -0.034441 -0.99695 0.070124 -0.03453 -0.99694 0.505346 0.11755 0.854873 0.452776 0.412776 0.790323 0.036146 -0.030367 0.998885 0.102673 0.522732 0.846292 -0.392163 0.367666 0.843226 -0.537007 -0.044516 0.842403 -0.381339 -0.456789 0.803694 -0.029983 -0.603529 0.796777 0.353555 -0.376961 0.856095 -0.022126 0.031378 -0.999263 -0.022206 0.031022 -0.999272 -0.034794 0.000053 -0.999394 -0.034795 -0.000114 -0.999394 0.028005 0.088391 -0.995692 0.027693 0.088393 -0.995701 0.033502 0.027822 -0.999051 0.033345 0.027521 -0.999065 0.078252 0.088788 -0.992972 0.078737 0.089561 -0.992864 0.184227 0.25361 -0.949601 0.184821 0.254471 -0.949255 0.112626 0.22992 -0.966671 0.115146 0.231615 -0.965969 -0.012552 0.09279 -0.995607 -0.0124 0.093245 -0.995566 0.697409 0.682223 0.21953 0.694823 0.684799 0.219705 0.980678 -0.003789 0.195594 0.980658 0.003326 0.195698 -0.034124 0.962138 0.270419 0.025873 0.963404 0.266802 -0.695398 0.65522 0.295141 -0.673033 0.678553 0.294266 -0.955558 -0.018576 0.294219 -0.955163 -0.042528 0.293011 -0.681337 -0.688122 0.249535 -0.659526 -0.709753 0.247542 -0.053361 -0.974456 0.218148 -0.01724 -0.975986 0.217152 0.679973 -0.70665 0.195659 0.68038 -0.70626 0.195653 0.583183 0.131081 0.801695 0.511978 0.502927 0.696379 0.118213 0.661447 0.740617 -0.492918 0.474452 0.729334 -0.679423 -0.04281 0.732496 -0.470546 -0.539956 0.697878 -0.030619 -0.720807 0.692459 0.430044 -0.470315 0.770627</float_array>
+          <technique_common>
+            <accessor source="#amanita_B_low-mesh-normals-array" count="113" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="amanita_B_low-mesh-map-channel1">
+          <float_array id="amanita_B_low-mesh-map-channel1-array" count="312">0.934851 0.564998 0.287041 0.665137 0.564998 0.294955 0.66214 0.664554 0.5 0.934851 0.664554 0.5 0.705091 0.564998 0.313237 0.701099 0.664554 0.5 0.742731 0.564998 0.33051 0.740058 0.664554 0.5 0.779016 0.564998 0.337406 0.779016 0.664554 0.5 0.815301 0.564998 0.33051 0.817975 0.664554 0.5 0.852942 0.564998 0.313237 0.856934 0.664554 0.5 0.892896 0.564998 0.294955 0.895892 0.664554 0.5 0.934851 0.693973 0.394571 0.66214 0.700826 0.394571 0.325228 0.331386 0 0.204562 0.381367 0 0.083895 0.331386 0 0.033913 0.210719 0 0.083895 0.090052 0 0.204562 0.04007 0 0.325228 0.090052 0 0.37521 0.210719 0 0.352849 0.479459 0 0.479065 0.609676 0 0.260814 0.711968 0 0.523061 0.787902 0 0.390657 0.931968 0 0.201807 0.951468 0 0.066309 0.83506 0 0.046817 0.647524 0 0.680082 0.733654 0.277289 0.921419 0.733654 0.277289 0.701099 0.700826 0.394571 0.714559 0.733654 0.277289 0.740058 0.694539 0.394571 0.749036 0.733654 0.277289 0.779016 0.700826 0.394571 0.783513 0.733654 0.277289 0.817975 0.700826 0.394571 0.817989 0.733654 0.277289 0.856934 0.707297 0.394571 0.852466 0.733654 0.277289 0.895892 0.700826 0.394571 0.886943 0.733654 0.277289 0.682183 0.899623 0.226274 0.921058 0.899833 0.221133 0.739438 0.246708 0 0.715756 0.228981 0 0.767953 0.014937 0 0.950994 0.117695 0 0.686473 0.23328 0 0.55817 0.016577 0 0.668741 0.256762 0 0.433635 0.204705 0 0.164942 0.501227 0 0.36603 0.442598 0 0.509945 0.593415 0 0.560831 0.797667 0 0.409719 0.964067 0 0.191861 0.987522 0 0.034433 0.853239 0 0.01138 0.635706 0 0.71919 0.899116 0.247991 0.75276 0.898608 0.271533 0.784202 0.898398 0.284187 0.815196 0.898608 0.2802 0.847416 0.899116 0.26127 0.882505 0.899623 0.236605 0.689574 0.919877 0.359705 0.914926 0.920178 0.355317 0.723621 0.922334 0.380655 0.755598 0.918422 0.404489 0.786125 0.920001 0.41791 0.816302 0.913328 0.41428 0.847299 0.917057 0.395266 0.880116 0.919877 0.370681 0.689466 0.983944 0.221488 0.909518 0.983862 0.234595 0.72275 0.986383 0.212915 0.756641 0.981374 0.214564 0.789468 0.98442 0.225312 0.820502 0.98661 0.238228 0.850193 0.987897 0.245938 0.879511 0.983944 0.244482 0.148593 0.46582 0 0.672949 0.286159 0 0.464822 0.422339 0 0.696631 0.303974 0 0.633765 0.541892 0 0.725914 0.299819 0 0.851069 0.510382 0 0.743645 0.27599 0 0.983085 0.335114 0 0.976806 0.564998 0.294955 0.955896 0.733654 0.277289 0.97381 0.664554 0.5 0.974159 0.692782 0.394571 0.960664 0.899623 0.226274 0.950343 0.919877 0.359705 0.941085 0.983944 0.221488</float_array>
+          <technique_common>
+            <accessor source="#amanita_B_low-mesh-map-channel1-array" count="104" stride="3">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+              <param name="P" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="amanita_B_low-mesh-vertices">
+          <input semantic="POSITION" source="#amanita_B_low-mesh-positions"/>
+        </vertices>
+        <polylist material="amanita" count="73">
+          <input semantic="VERTEX" source="#amanita_B_low-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#amanita_B_low-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#amanita_B_low-mesh-map-channel1" offset="2" set="1"/>
+          <vcount>4 4 4 4 4 4 4 4 8 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 3 3 3 3 3 3 3 3 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4</vcount>
+          <p>0 0 0 1 1 97 41 2 99 42 3 3 1 1 1 2 4 4 43 5 5 41 2 2 2 4 4 3 6 6 44 7 7 43 5 5 3 6 6 4 8 8 45 9 9 44 7 7 4 8 8 5 10 10 46 11 11 45 9 9 5 10 10 6 12 12 47 13 13 46 11 11 6 12 12 7 14 14 48 15 15 47 13 13 7 14 14 0 0 0 42 3 3 48 15 15 7 16 18 6 17 19 5 18 20 4 19 21 3 20 22 2 21 23 1 22 24 0 23 25 8 24 16 9 25 100 17 26 98 16 27 35 9 25 17 10 28 36 18 29 37 17 26 34 10 28 36 11 30 38 19 31 39 18 29 37 11 30 38 12 32 40 20 33 41 19 31 39 12 32 40 13 34 42 21 35 43 20 33 41 13 34 42 14 36 44 22 37 45 21 35 43 14 36 44 15 38 46 23 39 47 22 37 45 15 38 46 8 24 16 16 27 35 23 39 47 16 27 35 17 26 98 50 40 101 49 41 49 17 26 34 18 29 37 51 42 66 50 40 48 18 29 37 19 31 39 52 43 67 51 42 66 19 31 39 20 33 41 53 44 68 52 43 67 20 33 41 21 35 43 54 45 69 53 44 68 21 35 43 22 37 45 55 46 70 54 45 69 22 37 45 23 39 47 56 47 71 55 46 70 23 39 47 16 27 35 49 41 49 56 47 71 24 48 50 25 49 51 33 50 52 32 51 53 25 49 51 26 52 54 34 53 55 33 50 52 26 52 54 27 54 56 35 55 57 34 53 55 27 54 56 28 56 89 36 57 90 35 55 57 28 56 89 29 58 91 37 59 92 36 57 90 29 58 91 30 60 93 38 61 94 37 59 92 30 60 93 31 62 95 39 63 96 38 61 94 31 62 95 24 48 50 32 51 53 39 63 96 65 64 26 66 65 27 40 66 28 66 65 27 67 67 29 40 66 28 67 67 29 68 68 30 40 66 28 68 68 30 69 69 31 40 66 28 69 69 31 70 70 32 40 66 28 70 70 32 71 71 33 40 66 28 71 71 33 72 72 58 40 66 28 72 72 58 65 64 26 40 66 28 41 2 99 9 25 100 8 24 16 42 3 3 43 5 5 10 28 36 9 25 17 41 2 2 44 7 7 11 30 38 10 28 36 43 5 5 45 9 9 12 32 40 11 30 38 44 7 7 46 11 11 13 34 42 12 32 40 45 9 9 47 13 13 14 36 44 13 34 42 46 11 11 48 15 15 15 38 46 14 36 44 47 13 13 42 3 3 8 24 16 15 38 46 48 15 15 50 73 101 58 74 102 57 75 73 49 76 49 51 77 66 59 78 74 58 74 72 50 73 48 52 79 67 60 80 75 59 78 74 51 77 66 53 81 68 61 82 76 60 80 75 52 79 67 54 83 69 62 84 77 61 82 76 53 81 68 55 85 70 63 86 78 62 84 77 54 83 69 56 87 71 64 88 79 63 86 78 55 85 70 49 76 49 57 75 73 64 88 79 56 87 71 58 89 102 25 90 103 24 91 81 57 92 73 59 93 74 26 94 82 25 90 80 58 89 72 60 95 75 27 96 83 26 94 82 59 93 74 61 97 76 28 98 84 27 96 83 60 95 75 62 99 77 29 100 85 28 98 84 61 97 76 63 101 78 30 102 86 29 100 85 62 99 77 64 103 79 31 104 87 30 102 86 63 101 78 57 92 73 24 91 81 31 104 87 64 103 79 65 64 26 32 105 59 33 106 60 66 65 27 66 65 27 33 106 60 34 107 61 67 67 29 67 67 29 34 107 61 35 108 62 68 68 30 68 68 30 35 108 62 36 109 63 69 69 31 69 69 31 36 109 63 37 110 64 70 70 32 70 70 32 37 110 64 38 111 65 71 71 33 71 71 33 38 111 65 39 112 88 72 72 58 72 72 58 39 112 88 32 105 59 65 64 26</p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="amanita.max" name="amanita_max">
+      <node id="amanita_B_low-node" name="amanita_B_low" type="NODE">
+        <translate>0 0 0</translate>
+        <instance_geometry url="#amanita_B_low-mesh">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="amanita" target="#amanita">
+                <bind_vertex_input semantic="CHANNEL1" input_semantic="TEXCOORD" input_set="1"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <extra>
+        <technique profile="FCOLLADA">
+          <start_time>0</start_time>
+          <end_time>1</end_time>
+        </technique>
+      </extra>
+      <extra>
+        <technique profile="MAX3D">
+          <frame_rate>30</frame_rate>
+        </technique>
+      </extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#amanita.max"/>
+  </scene>
+</COLLADA>
