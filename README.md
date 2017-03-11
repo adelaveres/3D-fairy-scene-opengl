@@ -49,7 +49,7 @@ The point light sources- the fire flies, will gradually fade in and fade out.
 
 _Fading Lights:_
 
-![alt tag](https://scontent.fomr1-1.fna.fbcdn.net/v/t1.0-0/q81/p206x206/17264873_726937494151001_9222063461118300049_n.jpg?oh=4fc01f21edf7c2521cf1d144370efddb&oe=592AD1AA)
+![alt tag](https://scontent.fomr1-1.fna.fbcdn.net/v/t1.0-9/17264873_726937494151001_9222063461118300049_n.jpg?oh=1678e12b2011008de23a6e3a5a93c43f&oe=5965A807)
 ![alt tag](https://scontent.fomr1-1.fna.fbcdn.net/v/t1.0-9/17191439_726937584150992_236697689748883671_n.jpg?oh=6f8eac7f0168f67fbb9eb9118b7a3fc6&oe=592998F7)
 ![alt tag](https://scontent.fomr1-1.fna.fbcdn.net/v/t1.0-9/17202898_726937594150991_7209313727616257028_n.jpg?oh=2d398f109e373e36ffb6e5575011bb6a&oe=59284FC7)
 
@@ -63,7 +63,7 @@ _Rear view:_
 
 _Rotation & Transformation:_
 
-![alt tag](https://scontent.fomr1-1.fna.fbcdn.net/v/t1.0-0/p206x206/17202829_726937567484327_8916531692140047486_n.jpg?oh=2d6333ae4c266984c7e7f1f7cfe74e38&oe=5927D4C6)
+![alt tag](https://scontent.fomr1-1.fna.fbcdn.net/v/t1.0-9/17202829_726937567484327_8916531692140047486_n.jpg?oh=c2fc12f5e51bc97dfac19b2c9a7f1495&oe=593304D5)
 ![alt tag](https://scontent.fomr1-1.fna.fbcdn.net/v/t1.0-9/17155246_726937577484326_838099798483227909_n.jpg?oh=e8f3f787c398ac9b1a382c6ef11d554c&oe=59264642)
 ![alt tag](https://scontent.fomr1-1.fna.fbcdn.net/v/t1.0-9/14717149_726937490817668_354807066821206055_n.jpg?oh=5c134c1da65445bc83ef3648632726d1&oe=59724A4E)
 
